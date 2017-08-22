@@ -1,26 +1,16 @@
 {
-  "name": "nodejs-docs-samples-functions-sendgrid",
+  "name": "nodejs-functions-cloudflare-els",
   "version": "0.0.1",
   "private": true,
   "license": "Apache-2.0",
-  "author": "Google Inc.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/GoogleCloudPlatform/nodejs-docs-samples.git"
-  },
+  "author": "Cloudflare Inc.",
   "engines": {
     "node": ">=4.3.2"
-  },
-  "scripts": {
-    "lint": "samples lint",
-    "pretest": "npm run lint",
-    "test": "ava -T 20s --verbose test/*.test.js"
   },
   "dependencies": {
     "@google-cloud/bigquery": "0.9.6",
     "@google-cloud/storage": "1.2.1",
     "safe-buffer": "5.1.1",
-    "sendgrid": "5.2.0",
     "uuid": "3.1.0"
   },
   "devDependencies": {
