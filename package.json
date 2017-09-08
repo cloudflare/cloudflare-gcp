@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@google-cloud/bigquery": "0.9.6",
-    "@google-cloud/storage": "1.2.1",
+    "@google-cloud/storage": "1.2.1"
   },
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "1.4.16",
