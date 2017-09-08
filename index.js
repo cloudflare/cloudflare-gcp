@@ -19,9 +19,7 @@
 'use strict';
 
 // [START functions_cloudflare_setup]
-const Buffer = require('safe-buffer').Buffer;
 const config = require('./config.json');
-const uuid = require('uuid');
 
 // Get a reference to the Cloud Storage component
 const storage = require('@google-cloud/storage')();
