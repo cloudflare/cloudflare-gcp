@@ -27,29 +27,6 @@ const storage = require('@google-cloud/storage')();
 const bigquery = require('@google-cloud/bigquery')();
 // [END functions_cloudflare_setup]
 
-// [START functions_cloudflare_fix_names]
-/**
- * Recursively rename properties in to meet BigQuery field name requirements.
- *
- * @param {*} obj Value to examine.
- */
-function fixNames (obj) {
-  if (Array.isArray(obj)) {
-    obj.forEach(fixNames);
-  } else if (obj && typeof obj === 'object') {
-    Object.keys(obj).forEach((key) => {
-      const value = obj[key];
-      fixNames(value);
-      const fixedKey = key.replace('-', '_');
-      if (fixedKey !== key) {
-        obj[fixedKey] = value;
-        delete obj[key];
-      }
-    });
-  }
-}
-// [END functions_cloudflare_fix_names]
-
 // [START functions_cloudflare_get_table]
 /**
  * Helper method to get a handle on a BigQuery table. Automatically creates the
