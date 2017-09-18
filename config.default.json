@@ -1,4 +1,4 @@
 {
   "DATASET": "[YOUR_DATASET_NAME]",
-  "TABLE": "events",
+  "TABLE": "cloudflare_els_events",
 }

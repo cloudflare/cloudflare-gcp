@@ -40,7 +40,7 @@ function getTable () {
 }
 // [END functions_cloudflare_get_table]
 
-// [START functions_cloudflare_load]
+// [START functions_cloudflareLoad]
 /**
  * Cloud Function triggered by Cloud Storage when a file is uploaded.
  *
