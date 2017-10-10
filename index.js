@@ -40,7 +40,7 @@ function getTable () {
 }
 // [END functions_cloudflare_get_table]
 
-// [START functions_cloudflareLoad]
+// [START functions_jsonLoad]
 /**
  * Cloud Function triggered by Cloud Storage when a file is uploaded.
  *
@@ -51,7 +51,7 @@ function getTable () {
  * @param {string} [event.data.timeDeleted] Time the file was deleted if this is a deletion event.
  * @see https://cloud.google.com/storage/docs/json_api/v1/objects#resource
  */
-exports.cloudflareLoad = function cloudflareLoad (event) {
+exports.jsonLoad = function jsonLoad (event) {
   const file = event.data;
 
   if (file.resourceState === 'not_exists') {
@@ -85,4 +85,4 @@ exports.cloudflareLoad = function cloudflareLoad (event) {
       return Promise.reject(err);
     });
 };
-// [END functions_cloudflare_load]
+// [END functions_jsonLoad]
