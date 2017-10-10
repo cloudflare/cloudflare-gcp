@@ -2,7 +2,7 @@
 Google Cloud Function Code to push json files from GCS to Big Query
 
 ### Requirements
-If using the Google Cloud UI to upload then none on your local machine.
+If using the Google Cloud UI to upload then there are no local requirements.
 
 [gcloud SDK](https://cloud.google.com/sdk/downloads) need to be setup to run from command line.
 
