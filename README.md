@@ -20,7 +20,8 @@ When deploying through gcloud or in UI, the following need to be specified:
 
 ### Deploying from gcloud cli
 ~~~ 
-gcloud beta functions deploy <name of the cloud function> --trigger-bucket=<trigger-bucket-name>  
+gcloud beta functions deploy <name of the cloud function> 
+--trigger-resource=<trigger-bucket-name> --trigger-event google.storage.object.finalize 
 --source=<path to gcsToBigQuery repository on your workstation> --stage-bucket=<gs://gcs-bucket> 
 --entry-point=jsonLoad
 ~~~ 
