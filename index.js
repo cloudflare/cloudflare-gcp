@@ -21,6 +21,9 @@
 // [START functions_cloudflare_setup]
 const config = require('./config.json');
 
+// Explicitly define schema to avoid unintended type conversion
+const _schema = require('./schema.json');
+
 // Get a reference to the Cloud Storage component
 const storage = require('@google-cloud/storage')();
 // Get a reference to the BigQuery component
@@ -32,7 +35,7 @@ const bigquery = require('@google-cloud/bigquery')();
  * Helper method to get a handle on a BigQuery table. Automatically creates the
  * dataset and table if necessary.
  */
-function getTable () {
+function getTable() {
   const dataset = bigquery.dataset(config.DATASET);
 
   return dataset.get({ autoCreate: true })
@@ -51,7 +54,7 @@ function getTable () {
  * @param {string} [event.data.timeDeleted] Time the file was deleted if this is a deletion event.
  * @see https://cloud.google.com/storage/docs/json_api/v1/objects#resource
  */
-exports.jsonLoad = function jsonLoad (event) {
+exports.jsonLoad = function jsonLoad(event) {
   const file = event.data;
 
   if (file.resourceState === 'not_exists') {
@@ -73,8 +76,11 @@ exports.jsonLoad = function jsonLoad (event) {
       const fileObj = storage.bucket(file.bucket).file(file.name);
       console.log(`Starting job for ${file.name}`);
       const metadata = {
-        autodetect: true,
-        sourceFormat: 'NEWLINE_DELIMITED_JSON'
+        autodetect: false,
+        sourceFormat: 'NEWLINE_DELIMITED_JSON',
+        schema: {
+          fields: _schema
+        }
       };
       return table.import(fileObj, metadata);
     })
