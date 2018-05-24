@@ -120,6 +120,16 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "EdgeRateLimitAction",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "EdgeRateLimitID",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "EdgeRequestHost",
     "type": "STRING",
     "mode": "NULLABLE"
@@ -190,6 +200,11 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "ParentRayID",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "RayID",
     "type": "STRING",
     "mode": "NULLABLE"
@@ -227,6 +242,26 @@
   {
     "name": "WAFRuleMessage",
     "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "WorkerCPUTime",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "WorkerStatus",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "WorkerSubrequest",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "WorkerSubrequestCount",
+    "type": "INTEGER",
     "mode": "NULLABLE"
   },
   {
