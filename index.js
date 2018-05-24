@@ -26,12 +26,12 @@ const storage = require('@google-cloud/storage')();
 // Get a reference to the BigQuery component
 const bigquery = require('@google-cloud/bigquery')();
 // Lightweight HTTP client to parse remote JSON
-const fetch = require('node-fetch')
+const fetch = require('node-fetch');
 
 // Create _schema object to leverage global variable caching
 // https://cloud.google.com/functions/docs/bestpractices/tips
 // #use_global_variables_to_reuse_objects_in_future_invocations
-let _schema
+let _schema;
 
 // Read schema from public json file to avoid future redeployments.
 // If request fails, fallback to schema in local directory
