@@ -1,17 +1,18 @@
 # GCS To Big Query Cloud Function
-Google Cloud Function to process `json` files in Google Cloud Storage and push them to BigQuery
+Google Cloud Function for processing `json` log files in Google Cloud Storage and creating BigQuery tables!
 
-### Requirements
-* If you're using the Google Cloud UI to upload then there are no local requirements.
-* If you're working with this package locally, then the [gcloud SDK](https://cloud.google.com/sdk/downloads) needs to be installed.
-
-### Deploying from gcloud cli
+## Deploying from gcloud cli
 
 ```bash
 curl -LO "https://github.com/cloudflare/GCS-To-Big-Query/archive/master.zip" && unzip master.zip && cd GCS-To-Big-Query-master && sh ./start.sh
 ```
 
-### Advanced Setup
+## Advanced Configuration
+### Requirements
+* If you're using the Google Cloud UI to upload then there are no local requirements.
+* If you're working with this package locally, then the [gcloud SDK](https://cloud.google.com/sdk/downloads) needs to be installed.
+
+### Setup
 Environment variables (`config.json`):
 * `DATASET`: BigQuery dataset to write to. Will be created if necessary.
 * `TABLE`: BigQuery table to write to. Will be created if necessary.
