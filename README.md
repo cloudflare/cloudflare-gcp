@@ -9,7 +9,9 @@ curl -LO "https://github.com/cloudflare/GCS-To-Big-Query/archive/master.zip" && 
 
  *or*
 
-[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https%3A%2F%2Fgithub.com%2Fcloudflare%2FGCS-To-Big-Query%2F&page=shell&tutorial=cloudshell.md)
+[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https%3A%2F%2Fgithub.com%2Fcloudflare%2FGCS-To-Big-Query%2F&page=shell)
+
+*and* `sh ./start.sh`
 
 ## Advanced Configuration
 ### Requirements
