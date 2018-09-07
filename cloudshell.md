@@ -1,2 +1,2 @@
-# To auto-deploy, just run"
+# To auto-deploy, just run:
 ```<code snippet>```
