@@ -7,6 +7,10 @@ Google Cloud Function for processing `json` log files in Google Cloud Storage an
 curl -LO "https://github.com/cloudflare/GCS-To-Big-Query/archive/master.zip" && unzip master.zip && cd GCS-To-Big-Query-master && sh ./start.sh
 ```
 
+ *or*
+
+[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https%3A%2F%2Fgithub.com%2Fcloudflare%2FGCS-To-Big-Query%2F&page=shell&print=gcp%2Fcloudshell.txt)
+
 ## Advanced Configuration
 ### Requirements
 * If you're using the Google Cloud UI to upload then there are no local requirements.
