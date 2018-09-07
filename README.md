@@ -8,8 +8,7 @@ Google Cloud Function to process `json` files in Google Cloud Storage and push t
 ### Deploying from gcloud cli
 
 ```bash
-curl -LO "https://github.com/cloudflare/GCS-To-Big-Query/archive/master.zip" && unzip master.zip && cd GCS-To-Big-Query &&
-sh ./start.sh
+curl -LO "https://github.com/cloudflare/GCS-To-Big-Query/archive/master.zip" && unzip master.zip && cd GCS-To-Big-Query-master && sh ./start.sh
 ```
 
 ### Advanced Setup
