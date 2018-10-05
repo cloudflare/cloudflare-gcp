@@ -65,7 +65,12 @@ function getTable() {
       autoCreate: true
     })
     .then(([dataset]) => dataset.table(config.TABLE).get({
-      autoCreate: true
+      autoCreate: true,
+      schema: _schema,
+      timePartitioning: {
+        type: 'DAY',
+        field: 'EdgeStartTimestamp'
+      }
     }));
 }
 // [END functions_cloudflare_get_table]
@@ -109,10 +114,18 @@ exports.jsonLoad = function jsonLoad(event) {
           fields: _schema
         }
       };
-      return table.import(fileObj, metadata);
+      return table.load(fileObj, metadata);
     })
-    .then(([job]) => job.promise())
-    .then(() => console.log(`Job complete for ${file.name}`))
+    .then(([response]) => {
+      const loadJob = bigquery.job(response.jobReference.jobId);
+      loadJob.on('complete', function(metadata) {
+        console.log(`Job complete for ${file.name}`);
+      });
+      loadJob.on('error', function(err) {
+        console.log(`Job failed for ${file.name}`);
+        return Promise.reject(err);
+      });
+    })
     .catch((err) => {
       console.log(`Job failed for ${file.name}`);
       return Promise.reject(err);
