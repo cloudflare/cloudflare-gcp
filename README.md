@@ -4,7 +4,11 @@ Google Cloud Function for processing `json` log files in Google Cloud Storage an
 ## Deploying from gcloud cli
 
 ```bash
-curl -LO "https://github.com/cloudflare/GCS-To-Big-Query/archive/master.zip" && unzip master.zip && cd GCS-To-Big-Query-master && sh ./start.sh
+curl -LO "https://github.com/cloudflare/GCS-To-Big-Query/archive/master.zip" && unzip master.zip && cd GCS-To-Big-Query-master
+```
+```
+BUCKET_NAME='my-cloudflare-logs-bucket'
+sh ./start.sh
 ```
   
 ## Advanced Configuration
