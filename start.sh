@@ -1,1 +1,1 @@
-gcloud services enable cloudfunctions.googleapis.com && gsutil mb gs://cloudflare-logs-functions-$BUCKET_NAME && gcloud beta functions deploy cflogs-to-big-query --trigger-resource=$BUCKET_NAME --trigger-event google.storage.object.finalize --source=. --stage-bucket=gs://cloudflare-logs-functions-$BUCKET_NAME --entry-point=jsonLoad
+gcloud functions deploy jsonLoad --runtime nodejs8 --trigger-resource $BUCKET_NAME --trigger-event google.storage.object.finalize
