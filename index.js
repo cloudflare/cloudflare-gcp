@@ -81,41 +81,33 @@ function getTable() {
  * @param {string} [event.data.timeDeleted] Time the file was deleted if this is a deletion event.
  * @see https://cloud.google.com/storage/docs/json_api/v1/objects#resource
  */
-exports.jsonLoad = function jsonLoad(event) {
-  const file = event.data;
+exports.jsonLoad = async function jsonLoad (file, context) {
+  console.log(JSON.stringify({ file, context }))
 
-  if (file.resourceState === 'not_exists') {
-    // This was a deletion event, we don't want to process this
-    return;
+  await getSchema()
+
+  const [ table ] = await getTable()
+
+  const fileObj = storage.bucket(file.bucket).file(file.name)
+
+  console.log(`Starting job for ${file.name}`)
+
+  const metadata = {
+    autodetect: false,
+    sourceFormat: 'NEWLINE_DELIMITED_JSON',
+    schema: {
+      fields: _schema
+    }
   }
 
-  return Promise.resolve(getSchema())
-    .then(() => {
-      if (!file.bucket) {
-        throw new Error('Bucket not provided. Make sure you have a "bucket" property in your request');
-      } else if (!file.name) {
-        throw new Error('Filename not provided. Make sure you have a "name" property in your request');
-      }
+  try {
+    const [ job ] = await table.import(fileObj, metadata)
+    await job.promise()
+    console.log(`Job complete for ${file.name}`)
+  } catch (err) {
+    console.error(`Job failed for ${file.name}`, err)
+    return Promise.reject(err)
+  }
+}
 
-      return getTable();
-    })
-    .then(([table]) => {
-      const fileObj = storage.bucket(file.bucket).file(file.name);
-      console.log(`Starting job for ${file.name}`);
-      const metadata = {
-        autodetect: false,
-        sourceFormat: 'NEWLINE_DELIMITED_JSON',
-        schema: {
-          fields: _schema
-        }
-      };
-      return table.import(fileObj, metadata);
-    })
-    .then(([job]) => job.promise())
-    .then(() => console.log(`Job complete for ${file.name}`))
-    .catch((err) => {
-      console.log(`Job failed for ${file.name}`);
-      return Promise.reject(err);
-    });
-};
 // [END functions_jsonLoad]
