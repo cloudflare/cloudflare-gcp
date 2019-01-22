@@ -1,113 +1,45 @@
-/**
- * Copyright 2016, Google, Inc.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- *
- * This file has been modified by Cloudflare, Inc.
- */
+'use strict'
 
-'use strict';
+const { BigQuery } = require('@google-cloud/bigquery')
+const { Storage } = require('@google-cloud/storage')
 
-// [START functions_cloudflare_setup]
-const config = require('./config.json');
+async function gcsbq (file, context) {
+  const _schema = require(process.env.SCHEMA)
 
-// Get a reference to the Cloud Storage component
-const storage = require('@google-cloud/storage')();
-// Get a reference to the BigQuery component
-const bigquery = require('@google-cloud/bigquery')();
-// Lightweight HTTP client to parse remote JSON
-const fetch = require('node-fetch');
+  const datasetId = process.env.DATASET
+  const tableId = process.env.TABLE
 
-// Create _schema object to leverage global variable caching
-// https://cloud.google.com/functions/docs/bestpractices/tips
-// #use_global_variables_to_reuse_objects_in_future_invocations
-let _schema;
+  const bigquery = new BigQuery()
 
-// Read schema from public json file to avoid future redeployments.
-// If request fails, fallback to schema in local directory
-const backupSchema = require('./schema.json');
-
-const getSchema = () => {
-    return fetch('https://json-public.cfiq.io/schema.json')
-      .then(res => {
-        return res.json()
-      })
-      .then(json => {
-        _schema = json
-        return _schema
-      }).catch(e => {
-        console.log(e)
-        _schema = backupSchema
-        return _schema
-      });
-  }
-  // [END functions_cloudflare_setup]
-
-// [START functions_cloudflare_get_table]
-/**
- * Helper method to get a handle on a BigQuery table. Automatically creates the
- * dataset and table if necessary.
- */
-function getTable() {
-  const dataset = bigquery.dataset(config.DATASET);
-
-  return dataset.get({
-      autoCreate: true
-    })
-    .then(([dataset]) => dataset.table(config.TABLE).get({
-      autoCreate: true
-    }));
-}
-// [END functions_cloudflare_get_table]
-
-// [START functions_jsonLoad]
-/**
- * Cloud Function triggered by Cloud Storage when a file is uploaded.
- *
- * @param {object} event The Cloud Functions event.
- * @param {object} event.data A Cloud Storage file object.
- * @param {string} event.data.bucket Name of the Cloud Storage bucket.
- * @param {string} event.data.name Name of the file.
- * @param {string} [event.data.timeDeleted] Time the file was deleted if this is a deletion event.
- * @see https://cloud.google.com/storage/docs/json_api/v1/objects#resource
- */
-exports.jsonLoad = async function jsonLoad (file, context) {
-  console.log(JSON.stringify({ file, context }))
-
-  await getSchema()
-
-  const [ table ] = await getTable()
-
-  const fileObj = storage.bucket(file.bucket).file(file.name)
+  const storage = new Storage()
 
   console.log(`Starting job for ${file.name}`)
 
+  const filename = storage.bucket(file.bucket).file(file.name)
+
+  /* Configure the load job and ignore values undefined in schema */
   const metadata = {
-    autodetect: false,
     sourceFormat: 'NEWLINE_DELIMITED_JSON',
     schema: {
       fields: _schema
-    }
+    },
+    // Set the write disposition to overwrite existing table data.
+    writeDisposition: 'WRITE_TRUNCATE',
+    ignoreUnknownValues: true
   }
 
-  try {
-    const [ job ] = await table.import(fileObj, metadata)
-    await job.promise()
-    console.log(`Job complete for ${file.name}`)
-  } catch (err) {
-    console.error(`Job failed for ${file.name}`, err)
-    return Promise.reject(err)
+  // Load JSON from Google Cloud Storage file into the table
+  const [job] = await bigquery
+    .dataset(datasetId)
+    .table(tableId)
+    .load(filename, metadata)
+
+  console.log(`Job ${job.id} completed.`)
+
+  const errors = job.status.errors
+  if (errors && errors.length > 0) {
+    throw errors
   }
 }
 
-// [END functions_jsonLoad]
+exports.gcsbq = gcsbq
