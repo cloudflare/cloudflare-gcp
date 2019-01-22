@@ -60,6 +60,11 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "ClientRequestPath",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "ClientRequestProtocol",
     "type": "STRING",
     "mode": "NULLABLE"
@@ -200,12 +205,12 @@
     "mode": "NULLABLE"
   },
   {
-    "name": "ParentRayID",
+    "name": "RayID",
     "type": "STRING",
     "mode": "NULLABLE"
   },
   {
-    "name": "RayID",
+    "name": "ParentRayID",
     "type": "STRING",
     "mode": "NULLABLE"
   },
