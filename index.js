@@ -28,18 +28,14 @@ async function gcsbq (file, context) {
     ignoreUnknownValues: true
   }
 
-  // Load JSON from Google Cloud Storage file into the table
-  const [job] = await bigquery
-    .dataset(datasetId)
-    .table(tableId)
-    .load(filename, metadata)
+  const dataset = bigquery.dataset(datasetId)
 
-  console.log(`Job ${job.id} completed.`)
-
-  const errors = job.status.errors
-  if (errors && errors.length > 0) {
-    throw errors
-  }
+  await dataset.get({ autoCreate: true }, (e, dataset, res) => {
+    if (e) console.log(e)
+    dataset.table(tableId).get({ autoCreate: true }, (e, table, res) => {
+      table.load(filename, metadata)
+    })
+  })
 }
 
 exports.gcsbq = gcsbq

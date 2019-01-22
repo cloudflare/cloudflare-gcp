@@ -1,6 +1,6 @@
 #!/bin/sh
 
-BUCKET_NAME="my_google_cloud_storage_bucket"
+BUCKET_NAME="my_cloudflarelogs_gcp_storage_bucket"
 DATASET="cloudflare_logs"
 TABLE="cloudflare_logs"
 
