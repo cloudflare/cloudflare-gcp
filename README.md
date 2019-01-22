@@ -2,17 +2,21 @@
 Google Cloud Function for processing `json` log files in Google Cloud Storage and creating BigQuery tables!
 
 ## Deploying from gcloud cli
-
 ```bash
-# Install
+# 1) Install
+
 curl -LO "https://github.com/cloudflare/GCS-To-Big-Query/archive/master.zip" && unzip master.zip && cd GCS-To-Big-Query-master
 ```
-# Open `deploy.sh` and update the environment variables:
-* `BUCKET_NAME`: **required** * The name of Google Cloud Storage bucket used for Cloudflare Logpush logs.
-* `DATASET`: *optional* BigQuery dataset to write to. Will be created if necessary.
-* `TABLE`: *optional* BigQuery table to write to. Will be created if necessary.
 ```bash
-# Deploy function
+# 2) Open `deploy.sh` and update the environment variables
+
+BUCKET_NAME="" # required – The name of Google Cloud Storage bucket used for Cloudflare Logpush logs.
+DATASET="" # optional – BigQuery dataset to write to. Will be created if necessary.
+TABLE="" # optional – BigQuery table to write to. Will be created if necessary.
+```
+```bash
+# 3) Deploy function
+
 sh ./deploy.sh
 ```
 
