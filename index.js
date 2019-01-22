@@ -21,14 +21,37 @@
 // [START functions_cloudflare_setup]
 const config = require('./config.json');
 
-// Explicitly define schema to avoid unintended type conversion
-const _schema = require('./schema.json');
-
 // Get a reference to the Cloud Storage component
 const storage = require('@google-cloud/storage')();
 // Get a reference to the BigQuery component
 const bigquery = require('@google-cloud/bigquery')();
-// [END functions_cloudflare_setup]
+// Lightweight HTTP client to parse remote JSON
+const fetch = require('node-fetch');
+
+// Create _schema object to leverage global variable caching
+// https://cloud.google.com/functions/docs/bestpractices/tips
+// #use_global_variables_to_reuse_objects_in_future_invocations
+let _schema;
+
+// Read schema from public json file to avoid future redeployments.
+// If request fails, fallback to schema in local directory
+const backupSchema = require('./schema.json');
+
+const getSchema = () => {
+    return fetch('https://json-public.cfiq.io/schema.json')
+      .then(res => {
+        return res.json()
+      })
+      .then(json => {
+        _schema = json
+        return _schema
+      }).catch(e => {
+        console.log(e)
+        _schema = backupSchema
+        return _schema
+      });
+  }
+  // [END functions_cloudflare_setup]
 
 // [START functions_cloudflare_get_table]
 /**
@@ -38,8 +61,12 @@ const bigquery = require('@google-cloud/bigquery')();
 function getTable() {
   const dataset = bigquery.dataset(config.DATASET);
 
-  return dataset.get({ autoCreate: true })
-    .then(([dataset]) => dataset.table(config.TABLE).get({ autoCreate: true }));
+  return dataset.get({
+      autoCreate: true
+    })
+    .then(([dataset]) => dataset.table(config.TABLE).get({
+      autoCreate: true
+    }));
 }
 // [END functions_cloudflare_get_table]
 
@@ -54,41 +81,33 @@ function getTable() {
  * @param {string} [event.data.timeDeleted] Time the file was deleted if this is a deletion event.
  * @see https://cloud.google.com/storage/docs/json_api/v1/objects#resource
  */
-exports.jsonLoad = function jsonLoad(event) {
-  const file = event.data;
+exports.jsonLoad = async function jsonLoad (file, context) {
+  console.log(JSON.stringify({ file, context }))
 
-  if (file.resourceState === 'not_exists') {
-    // This was a deletion event, we don't want to process this
-    return;
+  await getSchema()
+
+  const [ table ] = await getTable()
+
+  const fileObj = storage.bucket(file.bucket).file(file.name)
+
+  console.log(`Starting job for ${file.name}`)
+
+  const metadata = {
+    autodetect: false,
+    sourceFormat: 'NEWLINE_DELIMITED_JSON',
+    schema: {
+      fields: _schema
+    }
   }
 
-  return Promise.resolve()
-    .then(() => {
-      if (!file.bucket) {
-        throw new Error('Bucket not provided. Make sure you have a "bucket" property in your request');
-      } else if (!file.name) {
-        throw new Error('Filename not provided. Make sure you have a "name" property in your request');
-      }
+  try {
+    const [ job ] = await table.import(fileObj, metadata)
+    await job.promise()
+    console.log(`Job complete for ${file.name}`)
+  } catch (err) {
+    console.error(`Job failed for ${file.name}`, err)
+    return Promise.reject(err)
+  }
+}
 
-      return getTable();
-    })
-    .then(([table]) => {
-      const fileObj = storage.bucket(file.bucket).file(file.name);
-      console.log(`Starting job for ${file.name}`);
-      const metadata = {
-        autodetect: false,
-        sourceFormat: 'NEWLINE_DELIMITED_JSON',
-        schema: {
-          fields: _schema
-        }
-      };
-      return table.import(fileObj, metadata);
-    })
-    .then(([job]) => job.promise())
-    .then(() => console.log(`Job complete for ${file.name}`))
-    .catch((err) => {
-      console.log(`Job failed for ${file.name}`);
-      return Promise.reject(err);
-    });
-};
 // [END functions_jsonLoad]

@@ -1,6 +1,6 @@
 {
   "name": "nodejs-functions-cloudflare-els",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "license": "Apache-2.0",
   "author": "Cloudflare Inc.",
@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "@google-cloud/bigquery": "0.9.6",
-    "@google-cloud/storage": "1.2.1"
+    "@google-cloud/storage": "1.2.1",
+    "node-fetch": "^2.1.2"
   },
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "1.4.16",
