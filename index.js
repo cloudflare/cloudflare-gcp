@@ -23,8 +23,6 @@ async function gcsbq (file, context) {
     schema: {
       fields: _schema
     },
-    // Set the write disposition to overwrite existing table data.
-    writeDisposition: 'WRITE_TRUNCATE',
     ignoreUnknownValues: true
   }
 
