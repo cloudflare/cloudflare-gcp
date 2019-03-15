@@ -3,7 +3,7 @@
 BUCKET_NAME="my_cloudflarelogs_gcp_storage_bucket"
 DATASET="cloudflare_logs"
 TABLE="cloudflare_logs"
-FUNCTIONS=("gcsbq")
+FUNCTIONS="gcsbq"
 
 for FUNC in $FUNCTIONS
 do
