@@ -4,8 +4,8 @@
 Integrate Cloudflare Enterprise Log Push with BigQuery, Dataflow and Security Command Center on Google Cloud.
 
 ### Contents
-* [Cloudflare Log Push ➜ Cloud Functions ➜ BigQuery](#one)
-* [Cloudflare Security Events ➜ Cloud Functions ➜ Security Command Center](#two)
+* [Cloudflare Log Push to BigQuery](#one)
+* [Cloudflare Security Events to Security Command Center](#two)
 
 ----
 <div id="one"></div>
