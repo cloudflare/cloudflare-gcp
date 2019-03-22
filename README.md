@@ -1,10 +1,11 @@
 # Cloudflare | GCP
-[![Latest Github release](https://img.shields.io/github/package-json/v/cloudflare/cloudflare-gcp.svg)](https://github.com/cloudflare/cloudflare-gcp/releases/latest)
-=====
+<!-- [![Latest Github release](https://img.shields.io/github/package-json/v/cloudflare/cloudflare-gcp.svg)](https://github.com/cloudflare/cloudflare-gcp/releases/latest) -->
+
 Integrate Cloudflare Enterprise Log Push with BigQuery, Dataflow and Security Command Center on Google Cloud.
 
 ### Contents
-[Cloudflare Log Push ➜ Cloud Functions ➜ BigQuery](#one)
+* [Cloudflare Log Push ➜ Cloud Functions ➜ BigQuery](#one)
+* [Cloudflare Security Events ➜ Cloud Functions ➜ Security Command Center](#two)
 
 ----
 <div id="one"></div>
@@ -14,13 +15,12 @@ Integrate Cloudflare Enterprise Log Push with BigQuery, Dataflow and Security Co
 * [Active Google Cloud account](https://cloud.google.com/free)
 * [Log Push enabled on Cloudflare](https://developers.cloudflare.com/logs/logpush/logpush-dashboard/)
 
-
-
-**Automatic Install**
+#### Automatic Install
+  
 [![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/cloudflare/cloudflare-gcp&tutorial=logpush-to-bigquery/cloudshell.md&cloudshell_working_dir=logpush-to-bigquery&cloudshell_open_in_editor=deploy.sh)
 
 
-**Manual Install**
+#### Manual Install
 ```bash
 curl -LO "https://github.com/cloudflare/cloudflare-gcp/archive/master.zip" && unzip master.zip && cd cloudflare-gcp/logpush-to-biqquery
 ```
@@ -36,6 +36,7 @@ FN_NAME="" # optional - the name of your Cloud Function | default: gcsbq
 sh ./deploy.sh
 ```
 ----
+<div id="two"></div>
 ### Cloudflare Log Push ➜ Dataflow ➜ Security Command Center
 #### Prequisites
 * *Current in private beta. Check back soon for updates!*
