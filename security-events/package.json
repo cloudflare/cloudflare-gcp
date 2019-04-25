@@ -1,0 +1,57 @@
+{
+  "name": "cloudflare-security-events",
+  "version": "0.1.13",
+  "description": "Deliver Cloudflare logs to Google Cloud Security Command Center",
+  "author": "Frank Taylor",
+  "license": "MIT",
+  "engines": {
+    "node": "8.14.0"
+  },
+  "main": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "cfse": "./bin/cse-cli.js"
+  },
+  "devDependencies": {
+    "acorn": "^6.0.5",
+    "standard": "^12.0.1",
+    "validate-npm-package-name": "3.0.0"
+  },
+  "keywords": [
+    "cloudflare",
+    "scc",
+    "cscc",
+    "security command center",
+    "google cloud",
+    "google cloud scc",
+    "google",
+    "security",
+    "security events",
+    "app"
+  ],
+  "files": [
+    "LICENSE",
+    "static/"
+  ],
+  "dependencies": {
+    "@google-cloud/asset": "^0.1.1",
+    "@google-cloud/bigquery": "^2.0.5",
+    "@google-cloud/pubsub": "^0.22.2",
+    "@google-cloud/security-center": "^0.1.2",
+    "@google-cloud/storage": "^2.3.4",
+    "bach": "^1.2.0",
+    "dayjs-ext": "^2.2.0",
+    "env-yaml": "^0.1.2",
+    "envinfo": "^7.0.0",
+    "fs-extra": "^7.0.1",
+    "google-gax": "^0.23.0",
+    "gulp-frep": "^0.1.3",
+    "numbered": "^1.1.0",
+    "prompts": "^2.0.0",
+    "protobufjs": "^6.8.8",
+    "quick-lru": "^2.0.0",
+    "vinyl-fs": "^3.0.3",
+    "yargs": "^12.0.5",
+    "yargs-interactive": "^2.0.1"
+  }
+}
