@@ -1,14 +1,14 @@
 ---
 # Service Account
 
-list: gcloud iam service-accounts list --format="json[0](email)" --filter="email=SERVICE_ACCOUNT@PROJECT_ID.iam.gserviceaccount.com"
+list: gcloud iam service-accounts list --format="json[0](email)" --filter="email=SERVICE_ACCOUNT"
 
 create: gcloud iam service-accounts create SERVICE_ACCOUNT --display-name "Service Account for SCC" --format=json
 
 add_binding:
   organization:
     cmd:
-      - gcloud organizations add-iam-policy-binding GCLOUD_ORG --member='serviceAccount:SERVICE_ACCOUNT@PROJECT_ID.iam.gserviceaccount.com' --role=ROLE_ID --format=json
+      - gcloud organizations add-iam-policy-binding GCLOUD_ORG --member='serviceAccount:SERVICE_ACCOUNT' --role=ROLE_ID --format=json
 
     roles:
       - roles/appengine.appAdmin
@@ -32,7 +32,7 @@ add_binding:
 
   project:
     cmd:
-      - gcloud projects add-iam-policy-binding PROJECT_ID --member='serviceAccount:SERVICE_ACCOUNT@PROJECT_ID.iam.gserviceaccount.com' --role=ROLE_ID --format=json
+      - gcloud projects add-iam-policy-binding PROJECT_ID --member='serviceAccount:SERVICE_ACCOUNT' --role=ROLE_ID --format=json
 
     roles:
       - roles/iam.serviceAccountAdmin
@@ -43,6 +43,6 @@ add_binding:
       - roles/pubsub.admin
       - roles/browser
 
-download_key: gcloud iam service-accounts keys create DEPLOYMENT_DIR/scc_key.json --iam-account SERVICE_ACCOUNT@PROJECT_ID.iam.gserviceaccount.com
+download_key: gcloud iam service-accounts keys create DEPLOYMENT_DIR/scc_key.json --iam-account SERVICE_ACCOUNT
 
-activate: gcloud auth activate-service-account SERVICE_ACCOUNT@PROJECT_ID.iam.gserviceaccount.com --key-file=DEPLOYMENT_DIR/scc_key.json
+activate: gcloud auth activate-service-account SERVICE_ACCOUNT --key-file=DEPLOYMENT_DIR/scc_key.json
