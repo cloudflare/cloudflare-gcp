@@ -3,7 +3,7 @@
 BUCKET_NAME="camiliame-logs"
 DATASET="cloudflare_logs"
 TABLE="cloudflare_logs"
-FN_NAME='gcsbq_2'
+FN_NAME='gcsbq'
 REGION='us-central1'
 # FUNC=${1:-$FN_NAME}
 

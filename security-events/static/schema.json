@@ -1,0 +1,277 @@
+[
+  {
+    "name": "CacheCacheStatus",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "CacheResponseBytes",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "CacheResponseStatus",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "CacheTieredFill",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ClientASN",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ClientCountry",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ClientDeviceType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ClientIP",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ClientIPClass",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ClientRequestBytes",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ClientRequestHost",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ClientRequestMethod",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ClientRequestPath",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ClientRequestProtocol",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ClientRequestReferer",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ClientRequestURI",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ClientRequestUserAgent",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ClientSrcPort",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ClientSSLCipher",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ClientSSLProtocol",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "EdgeColoID",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "EdgeEndTimestamp",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "EdgePathingOp",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "EdgePathingSrc",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "EdgePathingStatus",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "EdgeRateLimitAction",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "EdgeRateLimitID",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "EdgeRequestHost",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "EdgeResponseBytes",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "EdgeResponseCompressionRatio",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "EdgeResponseContentType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "EdgeResponseStatus",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "EdgeServerIP",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "EdgeStartTimestamp",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "OriginIP",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "OriginResponseBytes",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "OriginResponseHTTPExpires",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "OriginResponseHTTPLastModified",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "OriginResponseStatus",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "OriginResponseTime",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "OriginSSLProtocol",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "RayID",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ParentRayID",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "SecurityLevel",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "WAFAction",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "WAFFlags",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "WAFMatchedVar",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "WAFProfile",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "WAFRuleID",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "WAFRuleMessage",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "WorkerCPUTime",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "WorkerStatus",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "WorkerSubrequest",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "WorkerSubrequestCount",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ZoneID",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]
