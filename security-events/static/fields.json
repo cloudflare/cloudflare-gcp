@@ -1,0 +1,44 @@
+{
+  "EdgePathingStatus": {
+    "Asnum": "ASN",
+    "ctry": "IP Country",
+    "captchaNew": "Failed CAPTCHA",
+    "l7ddos": "DDoS",
+    "ip": "IP",
+    "ipr24": "IP /24",
+    "ipr16": "IP /16",
+    "ip6": "IPv6",
+    "ip6r64": "IP /64",
+    "ip6r48": "IP /48",
+    "ip6r32": "IP /32",
+    "rate_limit": "HTTP rate limit exceeded",
+    "ua": "Block: Banned User Agent",
+    "zl": "Block: IP Zone Lockdown",
+    "reserved_ip": "DNS record points to local or disallowed IP",
+    "reserved_ip6": "DNS record points to local or disallowed IP",
+    "bad_host": "Invalid Host Header sent with request",
+    "fint": "Cloudflare Administrative Ban",
+    "no_existing_host": "Zone not present or active on Cloudflare"
+  },
+  "EdgePathingSrc": {
+    "bic": "Block: Request failed Browser Integrity Check",
+    "hot": "Block: Hot Linking",
+    "protect": "Block: DDoS",
+    "filterBasedFirewall": "Firewall Rules"
+  },
+  "WAFAction": null,
+  "WAFProfile": "unknown",
+  "EdgeRateLimitID": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "EdgePathingOp": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ]
+}

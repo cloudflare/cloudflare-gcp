@@ -1,0 +1,12 @@
+SERVICE_PROMPT:
+  type: input
+  describe: 'Enter the service account id you created during signup:'
+
+BUCKET_PROMPT:
+  type: input
+  describe: 'Enter the bucket name(s) that you use for Cloudflare Enterpise Log Share (https://console.cloud.google.com/storage/browser?):'
+
+BQ_PROMPT:
+  type: input
+  describe: 'Do you use Cloudflare logs with BigQuery? If so, enter the dataset and
+    table (https: //console.cloud.google.com/bigquery?):'

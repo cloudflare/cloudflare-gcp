@@ -1,0 +1,76 @@
+{
+  "name": "cloudflare-security-events",
+  "version": "0.1.31",
+  "description": "Deliver Cloudflare logs to Google Cloud Security Command Center",
+  "author": "Frank Taylor",
+  "license": "MIT",
+  "engines": {
+    "node": "8.14.0"
+  },
+  "preferGlobal": true,
+  "repository": "shagamemnon/cloudflare-security-events",
+  "scripts": {
+    "enableAPIs": "node index.js enableAPIs",
+    "setEnv": "node index.js setEnv",
+    "deploy": "node index.js deploy",
+    "getServiceAcctKey": "node index.js getServiceAcctKey"
+  },
+  "keywords": [
+    "cloudflare",
+    "scc",
+    "cscc",
+    "security command center",
+    "google cloud",
+    "google cloud scc",
+    "google",
+    "securitys",
+    "security events",
+    "app"
+  ],
+  "main": "index.js",
+  "files": [
+    "LICENSE",
+    "cmds",
+    "index.js",
+    "templates",
+    "utils",
+    "cli.js"
+  ],
+  "bin": {
+    "cfse": "./cli.js",
+    "cloudflaregcp": "./cli.js"
+  },
+  "dependencies": {
+    "@google-cloud/asset": "^0.1.1",
+    "@google-cloud/bigquery": "^2.0.5",
+    "@google-cloud/pubsub": "^0.22.2",
+    "@google-cloud/security-center": "^0.1.1",
+    "@google-cloud/storage": "^2.3.4",
+    "acorn": "^6.0.5",
+    "bach": "^1.2.0",
+    "dayjs": "^1.8.12",
+    "dayjs-ext": "^2.2.0",
+    "del": "^3.0.0",
+    "download-git-repo": "^1.1.0",
+    "env-yaml": "^0.1.2",
+    "envinfo": "^7.0.0",
+    "exec-sh": "^0.3.2",
+    "find-up": "^3.0.0",
+    "fs-extra": "^7.0.1",
+    "global-dirs": "^0.1.1",
+    "google-gax": "^0.23.0",
+    "gulp-frep": "^0.1.3",
+    "inquirer-chalk-pipe": "^1.3.0",
+    "is-installed-globally": "^0.1.0",
+    "liftoff": "^3.0.0",
+    "prompts": "^2.0.0",
+    "protobufjs": "^6.8.8",
+    "quick-lru": "^2.0.0",
+    "read-yaml": "^1.1.0",
+    "validate-npm-package-name": "3.0.0",
+    "vinyl-fs": "^3.0.3",
+    "write-yaml": "^1.0.0",
+    "yargs": "^12.0.5",
+    "yargs-interactive": "^2.0.1"
+  }
+}
