@@ -16,8 +16,8 @@ Integrate Cloudflare Enterprise Log Push with BigQuery, Dataflow and Security Co
 * [Log Push enabled on Cloudflare](https://developers.cloudflare.com/logs/logpush/logpush-dashboard/)
 
 #### Automatic Install
-  
-[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/cloudflare/cloudflare-gcp&tutorial=cloudshell.md&cloudshell_working_dir=logpush-to-bigquery&cloudshell_open_in_editor=deploy.sh)
+
+[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/cloudflare/cloudflare-gcp&tutorial=logpush-to-bigquery/cloudshell.md&cloudshell_working_dir=logpush-to-bigquery&cloudshell_open_in_editor=deploy.sh)
 
 
 #### Manual Install
@@ -42,3 +42,4 @@ sh ./deploy.sh
 #### Prequisites
 * *Current in private beta. Check back soon for updates!*
 
+[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/cloudflare/cloudflare-gcp&tutorial=security-events/cloudshell.md&cloudshell_working_dir=security-events&cloudshell_open_in_editor=deploy.sh)
