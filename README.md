@@ -1,5 +1,3 @@
-<div style="font-family: 'sans-serif' !IMPORTANT">
-  
 # Cloudflare | GCP
 <!-- [![Latest Github release](https://img.shields.io/github/package-json/v/cloudflare/cloudflare-gcp.svg)](https://github.com/cloudflare/cloudflare-gcp/releases/latest) -->
 
@@ -40,9 +38,8 @@ sh ./deploy.sh
 ----
 <div id="two"></div>
 
-### Cloudflare Log Push ➜ Security Command Center
+### Cloudflare Log Push ➜ Dataflow ➜ Security Command Center
 #### Prequisites
-* *Current in BETA*
+* *Current in beta. Check back soon for updates!*
 
-[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/cloudflare/cloudflare-gcp&tutorial=../security-events/cloudshell.md&cloudshell_working_dir=cli)
-</div>
+[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/cloudflare/cloudflare-gcp&tutorial=security-events/cloudshell.md&cloudshell_working_dir=security-events&cloudshell_open_in_editor=deploy.sh)

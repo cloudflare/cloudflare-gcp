@@ -15,7 +15,6 @@ const replace = require('gulp-frep')
 const yargsInteractive = require('yargs-interactive')
 const bach = require('bach')
 const child = require('child_process')
-const download = require('download-git-repo')
 const chalkPipe = require('chalk-pipe')
 
 const del = require('del')
@@ -58,14 +57,6 @@ exports.handler = async (argv) => {
     cb(null, 1)
   }
 
-  // function fn2 (cb) {
-  //   download('shagamemnon/security-events-serverless', 'deployment', function (err) {
-  //     if (err) throw err
-  //     success('Remote repository downloaded')
-  //     cb(null, 0)
-  //   })
-  // }
-
   function fn2 (cb) {
     GCP.ENV()
     cb(null, 1)
@@ -78,9 +69,10 @@ exports.handler = async (argv) => {
     }
 
     function * setExample () {
-      yield 'Example: cloudflare-security-admin'
+      yield `Example: cloudflare-security-admin@${GCP.PROJECT_ID || 'PROJECT_ID'}@iam.gserviceaccount.com`
       yield 'Example: cloudflare-logs-bucket'
-      yield 'Example: myproject:cflogs_table.recent_events'
+      yield `Example: ${GCP.PROJECT_ID || 'PROJECT_ID'}:cflogs_table.recent_events`
+      yield `Example: us-central1`
     }
     let ex = setExample()
 
@@ -102,6 +94,7 @@ exports.handler = async (argv) => {
         BQ_DATASET: answers.BQ_PROMPT.replace('Example: ', ''),
         SERVICE_ACCOUNT: answers.SERVICE_PROMPT.replace('Example: ', ''),
         BASE_DIR: baseDir,
+        REGION: answers.REGION_PROMPT.replace('Example: ', ''),
         DEPLOYMENT_DIR: deploymentDir
       }, { spaces: 2 })
       success(`\n\nService Account Key created and environment variables set. To modify this file, use ... \n$ cfse setEnv \n--or-- \n$ nano ${envDir}\n\n${fs.readFileSync(envDir)}`)
@@ -141,6 +134,10 @@ exports.handler = async (argv) => {
       {
         pattern: /GCLOUD_ORG/g,
         replacement: `${GCP.GCLOUD_ORG}`
+      },
+      {
+        pattern: /REGION/g,
+        replacement: `${process.env.REGION}`
       },
       {
         pattern: /DEPLOYMENT_DIR/g,
