@@ -14,7 +14,9 @@ const securityCenter = new SC.v1beta1.SecurityCenterClient({
 const storage = new Storage()
 const { execSync } = require('child_process')
 
-const bigquery = new BigQuery()
+const bigquery = new BigQuery({
+  projectId: (process.env.BQ_DATASET).split(':')[0]
+})
 
 const { info, success, err } = require('./logger')
 const fields = require('./static/fields.json')
@@ -50,6 +52,7 @@ class CSE {
     this._assets = [this.orgPath]
     this.finding = {}
     this.rationale = Cache.rationales
+    this.newRows = 100
   }
 
   get assets () {
@@ -266,7 +269,7 @@ class CSE {
   }
 
   async rowsToStream () {
-    let bq = process.env.BQ_DATASET.split(':')[1].split('.')
+    let bq = (process.env.BQ_DATASET).split(':').pop().split('.')
     let dataset = bigquery.dataset(bq[0])
     this.count = {
       rowCount: [''].length,
@@ -318,17 +321,15 @@ class CSE {
     queries = ['./static/queries/threats.txt']
   }) {
     const $that = this
-    console.log(await this.rowsToStream())
+    this.newRows = await this.rowsToStream()
+    console.log(this.newRows)
 
     const runQueries = queries.map(async qry => {
       qry = fs.readFileSync(qry)
-      let dataset = process.env.BQ_DATASET
-      dataset.includes(':') ? dataset = dataset.split(':')[1] : dataset = process.env.BQ_DATASET
-
-      qry = `${qry}`.replace('BQ_DATASET', dataset)
+      qry = `${qry}`.replace('BQ_DATASET', (process.env.BQ_DATASET).split(':')[1])
       info(`Running query: ${qry}`)
 
-      await bigquery.createQueryStream({ query: qry, maxResults: await this.rowsToStream() })
+      await bigquery.createQueryStream({ query: qry, maxResults: this.newRows })
         .on('error', console.error)
         .on('data', (row) => {
           $that.formatFinding(row).update()
