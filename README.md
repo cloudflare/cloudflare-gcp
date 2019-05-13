@@ -1,7 +1,7 @@
 # Cloudflare | GCP
 <!-- [![Latest Github release](https://img.shields.io/github/package-json/v/cloudflare/cloudflare-gcp.svg)](https://github.com/cloudflare/cloudflare-gcp/releases/latest) -->
 
-Integrate Cloudflare Enterprise Log Push with BigQuery, Dataflow and Security Command Center on Google Cloud.
+Integrate Cloudflare Enterprise Log Push with BigQuery and Security Command Center on Google Cloud.
 
 ### Contents
 * [Cloudflare Log Push to BigQuery](#one)
@@ -17,7 +17,7 @@ Integrate Cloudflare Enterprise Log Push with BigQuery, Dataflow and Security Co
 
 #### Automatic Install
 
-[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/cloudflare/cloudflare-gcp&tutorial=logpush-to-bigquery/cloudshell.md&cloudshell_working_dir=logpush-to-bigquery&cloudshell_open_in_editor=deploy.sh)
+[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/cloudflare/cloudflare-gcp&tutorial=cloudshell.md&cloudshell_working_dir=logpush-to-bigquery&cloudshell_open_in_editor=deploy.sh)
 
 
 #### Manual Install
