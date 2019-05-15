@@ -40,6 +40,6 @@ sh ./deploy.sh
 
 ### Cloudflare Log Push ➜ Dataflow ➜ Security Command Center
 #### Prequisites
-* *Current in beta. Check back soon for updates!*
+* *Current in beta*
 
-[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/cloudflare/cloudflare-gcp&tutorial=cloudshell.md&cloudshell_working_dir=security-events)
+[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/cloudflare/cloudflare-gcp&tutorial=../security-events/cloudshell.md&cloudshell_working_dir=cli)

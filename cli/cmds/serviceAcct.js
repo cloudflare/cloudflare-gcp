@@ -43,6 +43,6 @@ exports.handler = (argv) => {
   }
 
   sh(file.download_key)
-  sh(file.activate)
+  // sh(file.activate)
   info('\nClick Next -->')
 }

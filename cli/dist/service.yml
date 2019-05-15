@@ -1,0 +1,34 @@
+---
+# Service Account
+
+list: gcloud iam service-accounts list --format="json[0](email)" --filter="email=cfsecadmin10@active-incline-183216.iam.gserviceaccount.com"
+
+create: gcloud iam service-accounts create cfsecadmin10@active-incline-183216.iam.gserviceaccount.com --display-name "Service Account for SCC" --format=json
+
+add_binding:
+  organization:
+    cmd:
+      - gcloud organizations add-iam-policy-binding 1065635207347 --member='serviceAccount:cfsecadmin10@active-incline-183216.iam.gserviceaccount.com' --role=ROLE_ID --format=json
+
+    roles:
+      - roles/appengine.appAdmin
+      - roles/bigquery.admin
+      - roles/cloudfunctions.developer
+      - roles/cloudfunctions.serviceAgent
+      - roles/deploymentmanager.editor
+      - roles/iam.serviceAccountActor
+      - roles/iam.serviceAccountUser
+      - roles/securitycenter.admin
+      - roles/storage.objectAdmin
+
+  project:
+    cmd:
+      - gcloud projects add-iam-policy-binding active-incline-183216 --member='serviceAccount:cfsecadmin10@active-incline-183216.iam.gserviceaccount.com' --role=ROLE_ID --format=json
+
+    roles:
+      - roles/pubsub.admin
+      - roles/browser
+
+download_key: gcloud iam service-accounts keys create /Users/frank/Repos/cloudflare-gcp/security-events/scc_key.json --iam-account cfsecadmin10@active-incline-183216.iam.gserviceaccount.com
+
+# activate: gcloud auth activate-service-account cfsecadmin10@active-incline-183216.iam.gserviceaccount.com --key-file=/Users/frank/Repos/cloudflare-gcp/security-events/scc_key.json

@@ -1,0 +1,5 @@
+---
+# Functions
+funcs:
+  bqscc: gcloud beta functions deploy bqscc --trigger-event=google.storage.object.finalize --trigger-resource=camiliame-logs --env-vars-file='./.env.yml' --region=us-central1 --memory=2048MB --runtime=nodejs8 --service-account=active-incline-183216@appspot.gserviceaccount.com
+  gcsbq: gcloud beta functions deploy gcsbq --trigger-event=google.storage.object.finalize --trigger-resource=camiliame-logs --env-vars-file='./.env.yml' --region=us-central1 --memory=2048MB --runtime=nodejs8 --service-account=active-incline-183216@appspot.gserviceaccount.com
