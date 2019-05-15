@@ -1,12 +1,11 @@
 #!/bin/sh
 
-BUCKET_NAME="camiliame-logs"
-DATASET="cloudflare_logs"
+BUCKET_NAME="examplecom-logs"
+DATASET="cloudflare_data"
 TABLE="cloudflare_logs"
-FN_NAME='gcsbq'
-REGION='us-central1'
-# FUNC=${1:-$FN_NAME}
-
+REGION="us-central1"
+# You probably don't need to change this value:
+FN_NAME="gcsbq"
 
 gcloud functions deploy $FN_NAME \
   --runtime nodejs8 \
