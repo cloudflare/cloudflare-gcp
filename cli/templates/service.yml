@@ -11,13 +11,8 @@ add_binding:
       - gcloud organizations add-iam-policy-binding GCLOUD_ORG --member='serviceAccount:SERVICE_ACCOUNT' --role=ROLE_ID --format=json
 
     roles:
-      - roles/appengine.appAdmin
       - roles/bigquery.admin
-      - roles/cloudfunctions.developer
-      - roles/cloudfunctions.serviceAgent
-      - roles/deploymentmanager.editor
-      - roles/iam.serviceAccountActor
-      - roles/iam.serviceAccountUser
+      # - roles/cloudfunctions.serviceAgent
       - roles/securitycenter.admin
       - roles/storage.objectAdmin
 
