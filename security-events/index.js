@@ -5,7 +5,6 @@ const CSE = require('./cse')
 module.exports.bqscc = async function (file, context) {
   if (file.name.includes('tableMeta')) return
   const cse = await CSE.init()
-  // console.log(await cse.rowsToStream())
   await cse.addFindings({
     queries: [
       './static/queries/no_waf.txt',
