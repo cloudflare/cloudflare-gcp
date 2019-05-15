@@ -27,10 +27,9 @@ async function gcsbq (file, context) {
   }
 
   const addToTable = async (tableId) => {
-    const dataset = bigquery.dataset(datasetId)
-    return dataset.table(tableId).get({ autoCreate: true }, (e, table, res) => {
-      table.load(filename, metadata)
-    })
+    const dataset = await bigquery.dataset(datasetId).get({ autoCreate: true })
+    const table = await dataset[0].table(tableId).get({ autoCreate: true })
+    return table[0].load(filename, metadata)
   }
 
   try {
