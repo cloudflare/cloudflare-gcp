@@ -11,13 +11,8 @@ add_binding:
       - gcloud organizations add-iam-policy-binding 1065635207347 --member='serviceAccount:cfsecadmin10@active-incline-183216.iam.gserviceaccount.com' --role=ROLE_ID --format=json
 
     roles:
-      - roles/appengine.appAdmin
       - roles/bigquery.admin
-      - roles/cloudfunctions.developer
-      - roles/cloudfunctions.serviceAgent
-      - roles/deploymentmanager.editor
-      - roles/iam.serviceAccountActor
-      - roles/iam.serviceAccountUser
+      # - roles/cloudfunctions.serviceAgent
       - roles/securitycenter.admin
       - roles/storage.objectAdmin
 
