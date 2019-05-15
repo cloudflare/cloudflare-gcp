@@ -41,3 +41,7 @@ security-events/# Environments
 security-events/.env.yml
 security-events/node_modules
 security-events/scc_key.json
+cli/node_modules
+cloudflare-gcp.code-workspace
+security-events/.DS_Store
+logpush-to-bigquery/.DS_Store

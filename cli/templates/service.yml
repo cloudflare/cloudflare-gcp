@@ -13,34 +13,22 @@ add_binding:
     roles:
       - roles/appengine.appAdmin
       - roles/bigquery.admin
-      - roles/billing.user
       - roles/cloudfunctions.developer
       - roles/cloudfunctions.serviceAgent
-      - roles/cloudtasks.admin
       - roles/deploymentmanager.editor
       - roles/iam.serviceAccountActor
-      - roles/iam.serviceAccountAdmin
-      - roles/iam.serviceAccountKeyAdmin
       - roles/iam.serviceAccountUser
-      - roles/orgpolicy.policyAdmin
-      - roles/resourcemanager.projectIamAdmin
       - roles/securitycenter.admin
-      - roles/servicemanagement.admin
-      - roles/servicemanagement.quotaAdmin
+      - roles/storage.objectAdmin
 
   project:
     cmd:
       - gcloud projects add-iam-policy-binding PROJECT_ID --member='serviceAccount:SERVICE_ACCOUNT' --role=ROLE_ID --format=json
 
     roles:
-      - roles/iam.serviceAccountAdmin
-      - roles/iam.serviceAccountKeyAdmin
-      - roles/editor
-      - roles/storage.admin
-      - roles/storage.objectAdmin
       - roles/pubsub.admin
       - roles/browser
 
 download_key: gcloud iam service-accounts keys create DEPLOYMENT_DIR/scc_key.json --iam-account SERVICE_ACCOUNT
 
-activate: gcloud auth activate-service-account SERVICE_ACCOUNT --key-file=DEPLOYMENT_DIR/scc_key.json
+# activate: gcloud auth activate-service-account SERVICE_ACCOUNT --key-file=DEPLOYMENT_DIR/scc_key.json

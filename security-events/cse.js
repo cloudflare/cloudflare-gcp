@@ -160,8 +160,14 @@ class CSE {
 
       case log.WAFRuleMessage && log.WAFRuleMessage !== 'undefined':
         this.finding.category = log.WAFRuleMessage
-        this.finding.sourceProperties.WAFAction = log.WAFAction
-        this.finding.sourceProperties.WAFProfile = log.WAFProfile
+        this.finding.sourceProperties.WAFAction = {
+          stringValue: log.WAFAction,
+          kind: 'stringValue'
+        }
+        this.finding.sourceProperties.WAFProfile = {
+          stringValue: log.WAFProfile,
+          kind: 'stringValue'
+        }
         this.finding.sourceProperties.Action = {
           stringValue: log.WAFAction,
           kind: 'stringValue'
@@ -288,16 +294,17 @@ class CSE {
         return parseInt(metadata[0].numRows)
       },
 
-      get prevBqRowCount () {
-        let file = JSON.parse(execSync(`gsutil cat gs://${process.env.BUCKET_NAME}/${tableMetaFile}`))
-        return parseInt(file.rowsInTable)
+      async prevBqRowCount () {
+        let contents = await file.download()
+        contents = JSON.parse(contents[0])
+        return parseInt(contents.rowsInTable)
       },
 
       async newRowCountFile () {
         console.log(`Current row count: `, await this.activeBqRowCount())
-        console.log(`Prev row count: `, this.prevBqRowCount)
-        this.rowsToQuery = Math.abs(await this.activeBqRowCount() - this.prevBqRowCount)
-        await this.rowsToQuery
+        console.log(`Prev row count: `, await this.prevBqRowCount())
+        this.rowsToQuery = Math.abs(await this.activeBqRowCount() - await this.prevBqRowCount())
+        console.log(await this.rowsToQuery)
         return {
           'rowsInTable': parseInt(await this.activeBqRowCount()),
           'rowsToQuery': this.rowsToQuery
@@ -318,6 +325,7 @@ class CSE {
     const runQueries = queries.map(async qry => {
       qry = fs.readFileSync(qry)
       qry = `${qry}`.replace('BQ_DATASET', (process.env.BQ_DATASET).split(':')[1])
+      qry = `${qry}`.replace('LIMIT 1000', `LIMIT ${this.newRows}`)
       info(`Running query: ${qry}`)
 
       await bigquery.createQueryStream({ query: qry, maxResults: this.newRows })
