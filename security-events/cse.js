@@ -269,52 +269,44 @@ class CSE {
   }
 
   async rowsToStream () {
+    const tableMetaFile = 'tableMeta.json'
     let bq = (process.env.BQ_DATASET).split(':').pop().split('.')
     let dataset = bigquery.dataset(bq[0])
-    this.count = {
-      rowCount: [''].length,
-      get newRowCount () {
-        return this.rowCount
-      },
-      set newRowCount (tbl) {
-        tbl.getMetadata((err, metadata, apiResponse) => {
-          if (err) {
-            // console.log(err)
-            return 0
-          }
-          this.rowCount = parseInt(metadata.numRows, 10)
-          console.log(this.rowCount)
-        })
-      }
-    }
-
-    this.count.newRowCount = dataset.table(bq[1])
-    let bucket = storage.bucket(process.env.BUCKET_NAME)
-    let file = bucket.file('tableMeta.json')
+    let file = storage.bucket(process.env.BUCKET_NAME).file(tableMetaFile)
     let exists = await file.exists()
 
     if (!exists) {
-      execSync(`gsutil cp tableMeta.json gs://${process.env.BUCKET_NAME}/`)
+      execSync(`gsutil cp ${tableMetaFile} gs://${process.env.BUCKET_NAME}/`)
     }
 
-    let numFile = await file.download()
-    numFile = JSON.parse(numFile[0])
-    numFile.numRows = `${numFile.numRows < 100 ? numFile.numRows = 100 : numFile.numRows}`
+    let rowCounter = {
+      newRows: [''].length,
+      oldRows: [''].length,
+      rowsToQuery: Number,
+      async activeBqRowCount () {
+        const metadata = await dataset.table(bq[1]).getMetadata()
+        return parseInt(metadata[0].numRows)
+      },
 
-    if (isNaN(this.count.newRowCount)) this.count.newRowCount = [''].length
-    if (isNaN(numFile.numRows)) numFile.numRows = [''].length
+      get prevBqRowCount () {
+        let file = JSON.parse(execSync(`gsutil cat gs://${process.env.BUCKET_NAME}/${tableMetaFile}`))
+        return parseInt(file.rowsInTable)
+      },
 
-    const difference = (a, b) => Math.abs(a - b)
-
-    numFile.numRows = difference(this.count.newRowCount, numFile.numRows)
-
-    return file.save(JSON.stringify(numFile), function (err) {
-      if (!err) {
-        console.log(`Rows to search:`, parseInt(numFile.numRows))
-        return numFile.numRows
-        // File written successfully.
+      async newRowCountFile () {
+        console.log(`Current row count: `, await this.activeBqRowCount())
+        console.log(`Prev row count: `, this.prevBqRowCount)
+        this.rowsToQuery = Math.abs(await this.activeBqRowCount() - this.prevBqRowCount)
+        await this.rowsToQuery
+        return {
+          'rowsInTable': parseInt(await this.activeBqRowCount()),
+          'rowsToQuery': this.rowsToQuery
+        }
       }
-    })
+    }
+
+    await file.save(JSON.stringify(await rowCounter.newRowCountFile()))
+    return rowCounter.rowsToQuery
   }
 
   async addFindings ({
@@ -322,7 +314,6 @@ class CSE {
   }) {
     const $that = this
     this.newRows = await this.rowsToStream()
-    console.log(this.newRows)
 
     const runQueries = queries.map(async qry => {
       qry = fs.readFileSync(qry)
