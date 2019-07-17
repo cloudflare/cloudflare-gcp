@@ -1,16 +1,12 @@
 # Cloudflare | GCP
 <!-- [![Latest Github release](https://img.shields.io/github/package-json/v/cloudflare/cloudflare-gcp.svg)](https://github.com/cloudflare/cloudflare-gcp/releases/latest) -->
 
-Integrate Cloudflare Enterprise Log Push with BigQuery and Security Command Center on Google Cloud.
-
-### Contents
-* [Cloudflare Log Push to BigQuery](#one)
-* [Cloudflare Security Events to Security Command Center](#two)
+Integrate Cloudflare Enterprise Logpush with Google BigQuery and Security Command Center on Google Cloud.
 
 ----
 <div id="one"></div>
 
-### Cloudflare Log Push ➜ Cloud Functions ➜ BigQuery
+### Cloudflare Logpush ➜ Google BigQuery
 **Prequisites:**
 * [Active Google Cloud account](https://cloud.google.com/free)
 * [Log Push enabled on Cloudflare](https://developers.cloudflare.com/logs/logpush/logpush-dashboard/)
