@@ -99,12 +99,17 @@
     "type": "STRING",
     "mode": "NULLABLE"
   },
+   {
+    "name": "EdgeColoCode",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
   {
     "name": "EdgeColoID",
     "type": "INTEGER",
     "mode": "NULLABLE"
   },
-  {
+   {
     "name": "EdgeEndTimestamp",
     "type": "TIMESTAMP",
     "mode": "NULLABLE"
@@ -168,6 +173,21 @@
     "name": "EdgeStartTimestamp",
     "type": "TIMESTAMP",
     "mode": "NULLABLE"
+  },
+  {
+    "name": "FirewallMatchesActions",
+    "type": "STRING",
+    "mode": "REPEATED"
+  },
+  {
+    "name": "FirewallMatchesSources",
+    "type": "STRING",
+    "mode": "REPEATED"
+  },
+  {
+    "name": "FirewallMatchesRuleIDs",
+    "type": "STRING",
+    "mode": "REPEATED"
   },
   {
     "name": "OriginIP",
