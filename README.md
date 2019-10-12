@@ -19,7 +19,7 @@ Integrate Cloudflare Enterprise Logpush with Google BigQuery and Security Comman
 #### Manual Install
 ```bash
 # Download and unzip the package
-curl -LO "https://github.com/cloudflare/cloudflare-gcp/archive/master.zip" && unzip master.zip && cd cloudflare-gcp/logpush-to-biqquery
+curl -LO "https://github.com/cloudflare/cloudflare-gcp/archive/master.zip" && unzip master.zip && cd cloudflare-gcp/logpush-to-bigquery
 ```
 
 ```bash
