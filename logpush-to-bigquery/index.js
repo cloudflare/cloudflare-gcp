@@ -20,6 +20,10 @@ async function gcsbq (file, context) {
   /* Configure the load job and ignore values undefined in schema */
   const metadata = {
     sourceFormat: 'NEWLINE_DELIMITED_JSON',
+    timePartitioning: {
+      type: 'DAY',
+      field: 'EdgeStartTimestamp'
+    },
     schema: {
       fields: schema
     },
