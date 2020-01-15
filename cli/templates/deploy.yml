@@ -1,0 +1,16 @@
+---
+# Functions
+
+create_bucket: 
+  main: gsutil mb gs://cloudflare_scc_v1_PROJECT_ID
+
+deploy_function:
+  trigger-topic: cfscc
+  env-vars-file: DEPLOYMENT_DIR/.env.yml'
+  region: REGION
+  memory: 2048MB
+  runtime: nodejs8
+  service-account: PROJECT_ID@appspot.gserviceaccount.com
+  stage-bucket: gs://cloudflare_scc_v1_PROJECT_ID
+  source: DEPLOYMENT_DIR
+  timeout: 300

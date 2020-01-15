@@ -16,16 +16,25 @@ const yargsInteractive = require('yargs-interactive')
 const bach = require('bach')
 const child = require('child_process')
 const chalkPipe = require('chalk-pipe')
-
 const del = require('del')
 const yaml = {
   read: require('read-yaml'),
   write: require('write-yaml')
 }
+const { info, success, err } = require('../utils/logger')
+const { baseDir, envDir, deploymentDir } = require('../utils/paths')
+
+exports.command = 'setEnv'
+
+exports.describe = 'Set environment variables'
+
+exports.builder = {
+  dir: {
+    default: '.'
+  }
+}
 
 exports.handler = async (argv) => {
-  const { info, success, err } = require('../utils/logger')
-  const { baseDir, envDir, deploymentDir } = require('../utils/paths')
   const GCP = {
     GCLOUD_ORG: '',
     PROJECT_ID: '',
@@ -63,15 +72,19 @@ exports.handler = async (argv) => {
   }
 
   function fn3 (cb) {
-    let prompts = yaml.read.sync(`templates/prompts.yml`)
+    let prompts = yaml.read.sync(`${baseDir}/templates/setEnvPrompts.yml`)
     let options = {
       interactive: { default: true }
     }
 
     function * setExample () {
+      yield `Example: Acme Corp`
+      yield `Example: YQSn-xWAQiiEh9qM58wZNnyQS7FUdoqGIUAbrh7T`
       yield `Example: cloudflare-security-admin@${GCP.PROJECT_ID || 'PROJECT_ID'}@iam.gserviceaccount.com`
+      yield `Example: organizations/12345678901/sources/112233445566778899abc`
       yield 'Example: cloudflare-logs-bucket'
-      yield `Example: ${GCP.PROJECT_ID || 'PROJECT_ID'}:cflogs_table.recent_events`
+      yield `Example: 60m`
+      yield `Example: ${GCP.PROJECT_ID || 'PROJECT_ID'}:cflogs_table.my_loggs`
       yield `Example: us-central1`
     }
     let ex = setExample()
@@ -86,17 +99,27 @@ exports.handler = async (argv) => {
     }
 
     function writeEnv (answers) {
-      yaml.write.sync(envDir, {
+      console.log(answers)
+      let envs = {
         PROJECT_ID: `${GCP.PROJECT_ID}`,
         GCLOUD_ORG: `${GCP.GCLOUD_ORG}`,
         CREDENTIALS: `./scc_key.json`,
-        BUCKET_NAME: answers.BUCKET_PROMPT.replace('Example: ', ''),
-        BQ_DATASET: answers.BQ_PROMPT.replace('Example: ', ''),
+        CF_ORG_NAME: answers.CF_ORG_NAME_PROMPT.replace('Example: ', ''),
+        API_KEY: answers.API_KEY_PROMPT.replace('Example: ', ''),
         SERVICE_ACCOUNT: answers.SERVICE_PROMPT.replace('Example: ', ''),
-        BASE_DIR: baseDir,
-        REGION: answers.REGION_PROMPT.replace('Example: ', ''),
-        DEPLOYMENT_DIR: deploymentDir
-      }, { spaces: 2 })
+        SOURCE_ID: answers.SRCID_PROMPT.replace('Example: ', ''),
+        BUCKET_NAME: answers.BUCKET_PROMPT.replace('Example: ', ''),
+        INTERVAL: answers.INTERVAL_PROMPT.replace('Example', ''),
+        BQ_DATASET: answers.BQ_PROMPT.replace('Example: ', ''),
+        REGION: answers.REGION_PROMPT.replace('Example: ', '')
+        // BASE_DIR: baseDir,
+        // DEPLOYMENT_DIR: deploymentDir
+      }
+      // handle optional bq parameter
+      if (!answers.BQ_PROMPT.includes('my_loggs')) {
+        envs.BQ_PROMPT = answers.BQ_PROMPT
+      }
+      yaml.write.sync(envDir, envs, { spaces: 2 })
       success(`\n\nService Account Key created and environment variables set. To modify this file, use ... \n$ cfse setEnv \n--or-- \n$ nano ${envDir}\n\n${fs.readFileSync(envDir)}`)
       info(`Project: ${GCP.PROJECT_ID}, Org: ${GCP.GCLOUD_ORG}`)
       success(`Click next -->`)
@@ -113,7 +136,7 @@ exports.handler = async (argv) => {
   }
 
   function fn4 (cb) {
-    require('env-yaml').config({ path: envDir })
+    // require('env-yaml').config({ path: envDir })
     const patterns = [
       {
         pattern: /SERVICE_ACCOUNT/g,
@@ -122,6 +145,10 @@ exports.handler = async (argv) => {
       {
         pattern: /PROJECT_ID/g,
         replacement: `${GCP.PROJECT_ID}`
+      },
+      {
+        pattern: /SOURCE_ID/g,
+        replacement: `${process.env.SOURCE_ID}`
       },
       {
         pattern: /BUCKET_NAME/g,
@@ -162,14 +189,4 @@ exports.handler = async (argv) => {
   }
 
   return bach.settleSeries(fn1, fn2, fn3, fn4)()
-}
-
-exports.command = 'setEnv'
-
-exports.describe = 'Set environment variables'
-
-exports.builder = {
-  dir: {
-    default: '.'
-  }
 }
