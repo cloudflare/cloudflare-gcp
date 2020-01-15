@@ -1,5 +1,0 @@
----
-# Functions
-funcs:
-  bqscc: gcloud beta functions deploy bqscc --trigger-event=google.storage.object.finalize --trigger-resource=BUCKET_NAME --env-vars-file='./.env.yml' --region=REGION --memory=2048MB --runtime=nodejs8 --service-account=PROJECT_ID@appspot.gserviceaccount.com
-  gcsbq: gcloud beta functions deploy gcsbq --trigger-event=google.storage.object.finalize --trigger-resource=BUCKET_NAME --env-vars-file='./.env.yml' --region=REGION --memory=2048MB --runtime=nodejs8 --service-account=PROJECT_ID@appspot.gserviceaccount.com

@@ -22,6 +22,13 @@ npm run setEnv
 npm run enableAPIs
 ```
 
+## Setup and deploy the Cloud Scheduler
+```bash
+# To Do - make this actually configurable. Only runs every hour right now
+npm run setSchedule
+
+```
+
 ## Create a service account key for SCC
 ```bash
 # Ensure your Google Application Credentials are set correctly by running:
