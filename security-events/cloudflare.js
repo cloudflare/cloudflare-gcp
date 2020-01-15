@@ -3,7 +3,7 @@ const fetch = require('node-fetch')
 const moment = require('moment')
 const LRU = require('quick-lru')
 const securityCenter = require('@google-cloud/security-center')
-const fields = require('./static/fields.json')
+const colos = require('./static/colos.json')
 
 const lru = new LRU({
   maxSize: 200
@@ -47,7 +47,6 @@ const CloudflareClient = {
     try {
       let uri = `https://api.cloudflare.com/client/v4${path}?${params}`.trimEnd()
       let response = await fetch(uri, { headers, method })
-      // console.log(await response.json())
       return await response.json()
     } catch (e) {
       return JSON.stringify({ err: e })
@@ -64,7 +63,6 @@ const CloudflareClient = {
 
   getColo (edgeColoID) {
     let id = Number.parseInt(edgeColoID, 10)
-    let colos = require('./static/colos.json')
     let inCache = Cache.colos.has(edgeColoID)
 
     if (!inCache) {
