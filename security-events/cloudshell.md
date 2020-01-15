@@ -7,8 +7,9 @@ gcloud config set project MY_CF_LOGS_PROJECT_ID
 * Note: if you don't have Logpush setup to stream logs in Google Cloud Storage, reach out to your customer success manager or go here if you know what you're doing: https://dash.cloudflare.com?analytics
 
 ## Install:
-```bash
-npm install
+```sh
+# Run npm install
+me@cloudshell:~/cloudflare-gcp/cli (some-project-123456)$ npm install
 ```
 
 ## Set Environment Variables and rewrite deployment files
@@ -20,6 +21,13 @@ npm run setEnv
 ## Enable the necessary Cloud APIs to run the Cloudflare integration
 ```bash
 npm run enableAPIs
+```
+
+## Setup and deploy the Cloud Scheduler
+```bash
+# To Do - make this actually configurable. Only runs every hour right now
+npm run setSchedule
+
 ```
 
 ## Create a service account key for SCC

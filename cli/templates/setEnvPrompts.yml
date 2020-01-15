@@ -1,0 +1,31 @@
+CF_ORG_NAME_PROMPT:
+  type: input
+  describe: 'What is the name of your Cloudflare organization?'
+
+API_KEY_PROMPT:
+  type: input
+  describe:  'Enter the Cloudflare API Token you created for Security Center (get a new token --> https://dash.cloudflare.com/profile/api-tokens)'
+
+SERVICE_PROMPT:
+  type: input
+  describe: 'Enter the service account id you created during the Google Cloud portion of the integration:'
+
+SRCID_PROMPT:
+  type: input
+  describe: 'Enter the source ID created for you during the Google Cloud signup'
+
+BUCKET_PROMPT:
+  type: input
+  describe: 'Enter the bucket name(s) that you use for Cloudflare Enterpise Log Share (view buckets --> https://console.cloud.google.com/storage/browser?)'
+
+INTERVAL_PROMPT:
+  type: input
+  describe: 'How often do you want Cloudflare to retrieve logs for you? Specify the interval in minutes. The minimum is 10 minutes; the maximum is 2880 minutes (48 hours); the default is 60 minutes'
+
+BQ_PROMPT:
+  type: input
+  describe: '[Optional] Do you use Cloudflare logs with BigQuery? If so, enter the dataset and table (view datasets --> https://console.cloud.google.com/bigquery?)'
+
+REGION_PROMPT:
+  type: input
+  describe: '[Optional] Enter the Google Cloud Region where the Cloudflare Security Events integration should run (Default --> us-central1)'
