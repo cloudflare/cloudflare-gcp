@@ -6,7 +6,7 @@ create_bucket:
 
 deploy_function:
   trigger-topic: cfscc
-  env-vars-file: DEPLOYMENT_DIR/.env.yml'
+  env-vars-file: DEPLOYMENT_DIR/.env.yml
   region: REGION
   memory: 2048MB
   runtime: nodejs8
