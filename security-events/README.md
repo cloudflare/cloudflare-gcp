@@ -1,4 +1,4 @@
-# SCC Documentation v2
+# SCC Documentation v0.2
 
 ## Setup
 
@@ -11,45 +11,60 @@
 4. Copy the token to your clipboard or keep the browser tab open
 5. Enter Google Cloud Shell:
 
-[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fcloudflare%2Fcloudflare-gcp&cloudshell_print=security-events%2Fcloudshell.md&cloudshell_working_dir=cli)
+[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/editor?cloudshell_git_branch=staging&cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fcloudflare%2Fcloudflare-gcp&cloudshell_print=security-events%2Fcloudshell.md&cloudshell_working_dir=cli)
 
-## Existing Limitations
-This integration will only fetch the most recent 1000 Firewall Events. You can set the scheduler - which defaults to 60 minutes - to run more frequently if you need to retrieve more data. 
 
-## CLI commands
-### Before starting any session, make sure to run the following commands:
-```bash
-gcloud config set account MY_GCP_ACCT_EMAIL
-cd ~/cloudflare-gcp/cli
+## Enter the Cloud Shell subdirectory for the project you want to use for the Cloudflare SCC integration
+<walkthrough-project-setup></walkthrough-project-setup>
+
+
+## Set Cloudshell to the project *you currently use* to store Cloudflare logs
+```sh
+gcloud config set project {{project-id}}
 ```
 
+## Enter CLI and install dependencies:
+Run:
+```bash
+cd cli
+npm install 
+```
 
-### Set Environment Variables and rewrite deployment files
+## Set Environment Variables and write deployment files
+Run:
 ```bash
 npm run setEnv
 ```
 
-### Enable the necessary Cloud APIs to run the Cloudflare integration
+## Enable the necessary Cloud APIs to run the Cloudflare integration
 ```bash
 npm run enableAPIs
 ```
 
-### Setup and deploy the Cloud Scheduler
+## Setup and deploy the Cloud Scheduler
+Run:
 ```bash
-# To Do - make this actually configurable. Only runs every hour right now
 npm run setSchedule
 ```
+*To Do - make this actually configurable. Only runs every hour right now*
 
-### Create a service account key for SCC
+## Create a service account key for SCC
+Run:
 ```bash
-# Ensure your Google Application Credentials are set correctly by running:
-gcloud config set account MY_GCP_ACCT_EMAIL
-
-# .. then retrieve the service account key
 npm run getServiceAcctKey
 ```
 
-### Deploy or redeploy integration
+**Tip:** Having issues? Make sure you're using the correct account:
+```bash
+gcloud config set account MY_GCP_ACCT_EMAIL
+```
+
+## Deploy integration
 ```bash
 npm run deploy
 ```
+
+
+## Done!
+<walkthrough-directive-name param-name="conclusion-trophy">
+</walkthrough-directive-name>
