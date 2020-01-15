@@ -1,0 +1,3 @@
+set_pubsub_topic: gcloud pubsub topics create cfscc
+set_pubsub_subscription: gcloud pubsub subscriptions create --topic cfscc ping
+set_cron: gcloud beta scheduler jobs create pubsub cfscc --schedule="* * * * *" --topic="cfscc" --message-body="Retrieve CF logs for SCC"

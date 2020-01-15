@@ -13,7 +13,9 @@
     "enableAPIs": "node index.js enableAPIs",
     "setEnv": "node index.js setEnv",
     "deploy": "node index.js deploy",
-    "getServiceAcctKey": "node index.js getServiceAcctKey"
+    "getServiceAcctKey": "node index.js getServiceAcctKey",
+    "serviceAcct": "node index.js getServiceAcctKey",
+    "setSchedule": "node index.js setSchedule"
   },
   "keywords": [
     "cloudflare",
@@ -54,6 +56,7 @@
     "exec-sh": "^0.3.2",
     "find-up": "^3.0.0",
     "fs-extra": "^7.0.1",
+    "g": "^2.0.1",
     "global-dirs": "^0.1.1",
     "google-gax": "^0.23.0",
     "gulp-frep": "^0.1.3",
