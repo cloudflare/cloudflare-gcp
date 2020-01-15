@@ -1,6 +1,6 @@
 # SCC Documentation v0.2
 
-## Setup
+## Setup & Automatic Setup (recommended)
 
 1. Go to [https://dash.cloudflare.com/profile/api-tokens](https://dash.cloudflare.com/profile/api-tokens)
 2. Click **Create Token** and check **Start with a Template**. Select the **Read all resources** option:
@@ -13,10 +13,7 @@
 
 [![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/editor?cloudshell_git_branch=staging&cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fcloudflare%2Fcloudflare-gcp&cloudshell_print=security-events%2Fcloudshell.md&cloudshell_working_dir=cli)
 
-
-## Enter the Cloud Shell subdirectory for the project you want to use for the Cloudflare SCC integration
-<walkthrough-project-setup></walkthrough-project-setup>
-
+## Manual Install (not recommended)
 
 ## Set Cloudshell to the project *you currently use* to store Cloudflare logs
 ```sh
