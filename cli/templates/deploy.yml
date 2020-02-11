@@ -9,7 +9,7 @@ deploy_function:
   env-vars-file: DEPLOYMENT_DIR/.env.yml
   region: REGION
   memory: 2048MB
-  runtime: nodejs8
+  runtime: nodejs10
   service-account: PROJECT_ID@appspot.gserviceaccount.com
   stage-bucket: gs://cloudflare-scc-bucket-PROJECT_ID
   source: DEPLOYMENT_DIR
