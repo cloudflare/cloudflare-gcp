@@ -25,5 +25,3 @@ add_binding:
       - roles/browser
 
 download_key: gcloud iam service-accounts keys create DEPLOYMENT_DIR/scc_key.json --iam-account SERVICE_ACCOUNT
-
-# activate: gcloud auth activate-service-account SERVICE_ACCOUNT --key-file=DEPLOYMENT_DIR/scc_key.json
