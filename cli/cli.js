@@ -1,3 +1,7 @@
 #!/usr/bin/env node
 
-require('./index.js')
+exports = require('yargs')
+  .commandDir('cmds')
+  .demandCommand()
+  .help()
+  .argv

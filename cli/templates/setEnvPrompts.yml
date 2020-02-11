@@ -1,0 +1,23 @@
+CF_ORG_NAME_PROMPT:
+  type: input
+  describe: 'What is the name of your Cloudflare organization?'
+
+API_KEY_PROMPT:
+  type: input
+  describe: 'Enter the Cloudflare API Token you created for Security Center (get a new token --> https://dash.cloudflare.com/profile/api-tokens):'
+
+SERVICE_PROMPT:
+  type: input
+  describe: 'Enter the service account id you created during the Google Cloud portion of the integration:'
+
+SRCID_PROMPT:
+  type: input
+  describe: 'Enter the source ID created for you during the Google Cloud signup:'
+
+INTERVAL_PROMPT:
+  type: input
+  describe: 'How often do you want Cloudflare to retrieve logs for you? Specify the interval in minutes. The minimum is 10 minutes; the maximum is 59 minutes:'
+
+REGION_PROMPT:
+  type: input
+  describe: '[Optional] Enter the Google Cloud Region where the Cloudflare Security Events integration should run:'

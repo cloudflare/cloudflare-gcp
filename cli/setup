@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./cli.js $1

@@ -16,7 +16,7 @@ exports.builder = {
 exports.handler = async function enableAPIs () {
   const { info, success, err } = require('../utils/logger')
   const { baseDir } = require('../utils/paths')
-  let cmds = yaml.read.sync(`${baseDir}/dist/apis.yml`)
+  let cmds = yaml.read.sync(`${baseDir}/confs/enableAPIs.yml`)
   cmds = Object.values(cmds.apis)
   let i = 1
   const runCmds = cmds.map(async cmd => {
