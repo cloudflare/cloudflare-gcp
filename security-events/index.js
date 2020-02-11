@@ -5,8 +5,11 @@ require('env-yaml').config()
 const assets = require('./assets')
 const cfLogs = require('./cflogs')
 
-exports.FirewallEventsToSecurityCenter = async function () {
+exports.FirewallEventsToSecurityCenter = async function (pubSubMessage, context) {
   try {
+    if (pubSubMessage && 'data' in pubSubMessage) {
+      console.log('Received pubsub trigger. Starting ...')
+    }
     const sequence = (arr, input) => {
       arr.reduce(
         (promiseChain, currentFunction) => promiseChain.then(currentFunction),
@@ -16,7 +19,6 @@ exports.FirewallEventsToSecurityCenter = async function () {
 
     let pipeline = await sequence([
       await assets.getZoneIds(),
-      // await assets.logRetentionEnabled()
       // await assets.getLbHosts()
       await assets.getDnsRecords(),
       await assets.getGoogleResources(),
