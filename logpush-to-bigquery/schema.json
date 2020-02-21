@@ -1,5 +1,10 @@
 [
   {
+    "name": "BotScore",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "CacheCacheStatus",
     "type": "STRING",
     "mode": "NULLABLE"
@@ -96,6 +101,11 @@
   },
   {
     "name": "ClientSSLProtocol",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ClientXRequestedWith",
     "type": "STRING",
     "mode": "NULLABLE"
   },
