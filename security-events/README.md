@@ -1,3 +1,8 @@
+🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨
+
+Cloudflare GCP Security Events has been deprecated. No more contributions will be accepted. The master branch will be replaced by examples for integrating Cloudflare logs with Security Command Center
+
+🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨
 # SCC Documentation - Beta v0.2
 
 ## Prerequisites
