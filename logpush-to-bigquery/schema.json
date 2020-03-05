@@ -5,6 +5,11 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "BotScoreSrc",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "CacheCacheStatus",
     "type": "STRING",
     "mode": "NULLABLE"
