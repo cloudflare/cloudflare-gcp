@@ -1,0 +1,157 @@
+[
+  {
+    "name": "Application",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "ClientAsn",
+    "type": "INTEGER",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "ClientBytes",
+    "type": "INTEGER",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "ClientCountry",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "ClientIP",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "ClientMatchedIpFirewall",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "ClientPort",
+    "type": "INTEGER",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "ClientProto",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "ClientTcpRtt",
+    "type": "INTEGER",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "ClientTlsCipher",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "ClientTlsClientHelloServerName",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "ClientTlsProtocol",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "ClientTlsStatus",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "ColoCode",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "ConnectTimestamp",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "DisconnectTimestamp",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "Event",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "IpFirewall",
+    "type": "BOOLEAN",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "OriginBytes",
+    "type": "INTEGER",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "OriginIP",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "OriginPort",
+    "type": "INTEGER",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "OriginProto",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "OriginTcpRtt",
+    "type": "INTEGER",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "OriginTlsCipher",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "OriginTlsFingerprint",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "OriginTlsMode",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "OriginTlsProtocol",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "OriginTlsStatus",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "ProxyProtocol",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "Status",
+    "type": "INTEGER",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "Timestamp",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  }
+]
