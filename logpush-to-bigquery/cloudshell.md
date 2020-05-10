@@ -8,7 +8,7 @@ gcloud config set project {{project-id}}
 ## Update the environment variables in deploy.sh
 ```sh
 # required - Use the HTTP or Spectrum schema (schema-http.json or schema-spectrum.json).
-Schema=""
+SCHEMA=""
 
 # required – The name of Google Cloud Storage bucket used for Cloudflare Logpush logs.
 BUCKET_NAME=""
