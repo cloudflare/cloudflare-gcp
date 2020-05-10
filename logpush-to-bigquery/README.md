@@ -1,12 +1,10 @@
 # Cloudflare Log Push ➜ Cloud Functions ➜ BigQuery
 
 **Prequisites:**
-
 - [Active Google Cloud account](https://cloud.google.com/free)
 - [Log Push enabled on Cloudflare](https://developers.cloudflare.com/logs/logpush/logpush-dashboard/)
 
 ### Automatic Install
-
 [![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/cloudflare/cloudflare-gcp&tutorial=cloudshell.md&cloudshell_working_dir=logpush-to-bigquery&cloudshell_open_in_editor=deploy.sh)
 
 ### Manual Install
