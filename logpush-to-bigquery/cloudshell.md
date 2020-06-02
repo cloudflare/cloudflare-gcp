@@ -1,9 +1,7 @@
 # Cloudflare Log Push
 
 ## Set your project ID
-```sh
-gcloud config set project {{project-id}}
-```
+<walkthrough-project-setup></walkthrough-project-setup>
 
 ## Update the environment variables in deploy.sh
 ```sh
