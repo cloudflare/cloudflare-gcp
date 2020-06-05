@@ -15,8 +15,8 @@ curl -LO "https://github.com/cloudflare/cloudflare-gcp/archive/master.zip" && un
 
 ```bash
 # Update the environment variables in deploy.sh
-SCHEMA="" # required - The schema based on the logs' source. schema-http.json for HTTP logs, schema-spectrum.json for Spectrum logs.
 BUCKET_NAME="" # required – The name of Google Cloud Storage bucket used for Cloudflare Logpush logs.
+SCHEMA="" # optional - The schema based on the logs' source. schema-http.json is the default. Spectrum users will want to change this to "schema-spectrum.json"
 DATASET="" # optional – BigQuery dataset to write to. Will be created if necessary.
 TABLE="" # optional – BigQuery table to write to. Will be created if necessary.
 FN_NAME="" # optional - the name of your Cloud Function | default: gcsbq
