@@ -8,6 +8,10 @@
 # required – The name of Google Cloud Storage bucket used for Cloudflare Logpush logs.
 BUCKET_NAME=""
 
+# optional - specify a different schema. Spectrum users will want to change this to
+# schema-spectrum.json.
+SCHEMA="schema-http.json"
+
 # optional – BigQuery dataset to write to. Will be created if necessary.
 DATASET=""
 

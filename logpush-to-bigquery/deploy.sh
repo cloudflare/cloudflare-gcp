@@ -1,5 +1,6 @@
 #!/bin/sh
 
+SCHEMA="schema-http.json"
 BUCKET_NAME="examplecom-logs"
 DATASET="cloudflare_data"
 TABLE="cloudflare_logs"
@@ -14,4 +15,4 @@ gcloud functions deploy $FN_NAME \
   --region=$REGION \
   --memory=1024MB \
   --entry-point=gcsbq \
-  --set-env-vars DATASET=$DATASET,TABLE=$TABLE,SCHEMA="./schema.json"
+  --set-env-vars DATASET=$DATASET,TABLE=$TABLE,SCHEMA=$SCHEMA
