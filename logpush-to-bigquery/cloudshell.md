@@ -3,7 +3,6 @@
 ## Set your project ID
 <walkthrough-project-setup></walkthrough-project-setup>
 
-
 ## Update the environment variables in deploy.sh
 ```sh
 # required – The name of Google Cloud Storage bucket used for Cloudflare Logpush logs.
