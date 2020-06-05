@@ -1,17 +1,17 @@
 # Cloudflare Log Push
 
 ## Set your project ID
-```sh
-gcloud config set project {{project-id}}
-```
+<walkthrough-project-setup></walkthrough-project-setup>
+
 
 ## Update the environment variables in deploy.sh
 ```sh
-# required - Use the HTTP or Spectrum schema (schema-http.json or schema-spectrum.json).
-SCHEMA=""
-
 # required – The name of Google Cloud Storage bucket used for Cloudflare Logpush logs.
 BUCKET_NAME=""
+
+# optional - specify a different schema. Spectrum users will want to change this to
+# schema-spectrum.json.
+SCHEMA="schema-http.json"
 
 # optional – BigQuery dataset to write to. Will be created if necessary.
 DATASET=""
