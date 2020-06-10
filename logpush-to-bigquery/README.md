@@ -20,6 +20,8 @@ SCHEMA="" # optional - The schema based on the logs' source. schema-http.json is
 DATASET="" # optional – BigQuery dataset to write to. Will be created if necessary.
 TABLE="" # optional – BigQuery table to write to. Will be created if necessary.
 FN_NAME="" # optional - the name of your Cloud Function | default: gcsbq
+EXPIRATION_MS="" # optional - records should be expired after this amount of time
+TIME_PARTITIONING_FIELD="" # optional - the name of the field used for time partitioning. defaults to "EdgeStartTimestamp". spectrum users will want to change this to "Timestamp".
 
 # Deploy to GCP
 sh ./deploy.sh
