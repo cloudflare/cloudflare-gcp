@@ -10,6 +10,8 @@ async function gcsbq (file, context) {
 
   const datasetId = process.env.DATASET
   const tableId = process.env.TABLE
+  const expirationMs = process.env.EXPIRATION_MS
+  const timePartitioningField = process.env.TIME_PARTITIONING_FIELD || 'EdgeStartTimestamp'
 
   console.log(`Starting job for ${file.name}`)
 
@@ -22,6 +24,11 @@ async function gcsbq (file, context) {
     sourceFormat: 'NEWLINE_DELIMITED_JSON',
     schema: {
       fields: schema
+    },
+    timePartitioning: {
+      type: 'DAY',
+      expirationMs: expirationMs,
+      field: timePartitioningField
     },
     ignoreUnknownValues: true
   }
