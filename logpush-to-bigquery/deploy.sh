@@ -9,6 +9,7 @@ REGION="us-central1"
 FN_NAME="gcsbq"
 
 gcloud functions deploy $FN_NAME \
+  --project $PROJECT \
   --runtime nodejs10 \
   --trigger-resource $BUCKET_NAME \
   --trigger-event google.storage.object.finalize \
