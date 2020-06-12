@@ -6,7 +6,7 @@ const bigquery = new BigQuery()
 const storage = new Storage()
 
 async function gcsbq (file, context) {
-  const schema = require(process.env.SCHEMA)
+  const schema = require(`./${process.env.SCHEMA}`)
 
   const datasetId = process.env.DATASET
   const tableId = process.env.TABLE
