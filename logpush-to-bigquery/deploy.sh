@@ -6,10 +6,9 @@ DATASET="cloudflare_data"
 TABLE="cloudflare_logs"
 REGION="us-central1"
 # You probably don't need to change this value:
-FN_NAME="gcsbq"
+FN_NAME="gcsbq2"
 
 gcloud functions deploy $FN_NAME \
-  --project $PROJECT \
   --runtime nodejs10 \
   --trigger-resource $BUCKET_NAME \
   --trigger-event google.storage.object.finalize \
