@@ -1,10 +1,17 @@
 # Cloudflare Log Push
 
-## Set your project ID
+## Select project
 <walkthrough-project-setup></walkthrough-project-setup>
+
+## Set project ID
+gcloud config set project {{project-id}}
 
 ## Update the environment variables in deploy.sh
 ```sh
+sudo nano deploy.sh
+```
+#### Variable reference
+```
 # required – The name of Google Cloud Storage bucket used for Cloudflare Logpush logs.
 BUCKET_NAME=""
 
