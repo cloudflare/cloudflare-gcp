@@ -4,7 +4,9 @@
 <walkthrough-project-setup></walkthrough-project-setup>
 
 ## Set project ID
+```
 gcloud config set project {{project-id}}
+```
 
 ## Update the environment variables in deploy.sh
 ```sh
