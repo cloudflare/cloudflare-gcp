@@ -12,7 +12,7 @@
     "@google-cloud/bigquery": "^2.0.6",
     "@google-cloud/storage": "^2.3.4",
     "fs-extra": "^7.0.1",
-    "node-fetch": "^2.1.2"
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "^3.2.0",
