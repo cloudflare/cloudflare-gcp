@@ -1,0 +1,142 @@
+[
+  {
+    "Name": "Action",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "ClientASN",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "ClientASNDescription",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "ClientCountry",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "ClientIP",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "ClientIPClass",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "ClientRefererHost",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "ClientRefererPath",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "ClientRefererQuery",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "ClientRefererScheme",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "ClientRequestHost",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "ClientRequestMethod",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "ClientRequestPath",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "ClientRequestProtocol",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "ClientRequestQuery",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "ClientRequestScheme",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "ClientRequestUserAgent",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "Datetime",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "EdgeColoCode",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "EdgeResponseStatus",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "Kind",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "MatchIndex",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "Metadata",
+    "type": "STRUCT",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "OriginResponseStatus",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "OriginatorRayID",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "RayID",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "RuleID",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "Name": "Source",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]
