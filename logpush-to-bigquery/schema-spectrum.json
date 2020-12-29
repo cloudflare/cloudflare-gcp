@@ -151,7 +151,7 @@
   },
   {
     "name": "Timestamp",
-    "type": "TIMESTAMP",
+    "type": "INTEGER",
     "MODE": "NULLABLE"
   }
 ]
