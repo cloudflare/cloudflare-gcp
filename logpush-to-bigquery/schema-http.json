@@ -55,6 +55,16 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "ClientMTLSAuthCertFingerprint",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ClientMTLSAuthStatus",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "ClientRequestBytes",
     "type": "INTEGER",
     "mode": "NULLABLE"
@@ -85,6 +95,16 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "ClientRequestScheme",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ClientRequestSource",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "ClientRequestURI",
     "type": "STRING",
     "mode": "NULLABLE"
@@ -110,11 +130,21 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "ClientTCPRTTMs",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "ClientXRequestedWith",
     "type": "STRING",
     "mode": "NULLABLE"
   },
-   {
+  {
+    "name": "EdgeCFConnectingO2O",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "EdgeColoCode",
     "type": "STRING",
     "mode": "NULLABLE"
@@ -124,7 +154,7 @@
     "type": "INTEGER",
     "mode": "NULLABLE"
   },
-   {
+  {
     "name": "EdgeEndTimestamp",
     "type": "TIMESTAMP",
     "mode": "NULLABLE"
@@ -160,6 +190,11 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "EdgeResponseBodyBytes",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "EdgeResponseBytes",
     "type": "INTEGER",
     "mode": "NULLABLE"
@@ -190,12 +225,12 @@
     "mode": "NULLABLE"
   },
   {
-    "name": "FirewallMatchesActions",
-    "type": "STRING",
-    "mode": "REPEATED"
+    "name": "EdgeTimeToFirstByteMs",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
   },
   {
-    "name": "FirewallMatchesSources",
+    "name": "FirewallMatchesActions",
     "type": "STRING",
     "mode": "REPEATED"
   },
@@ -205,12 +240,37 @@
     "mode": "REPEATED"
   },
   {
+    "name": "FirewallMatchesSources",
+    "type": "STRING",
+    "mode": "REPEATED"
+  },
+  {
+    "name": "OriginDNSResponseTimeMs",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "OriginIP",
     "type": "STRING",
     "mode": "NULLABLE"
   },
   {
+    "name": "OriginRequestHeaderSendDurationMs",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "OriginResponseBytes",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "OriginResponseDurationMs",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "OriginResponseHeaderReceiveDurationMs",
     "type": "INTEGER",
     "mode": "NULLABLE"
   },
@@ -240,8 +300,13 @@
     "mode": "NULLABLE"
   },
   {
-    "name": "RayID",
-    "type": "STRING",
+    "name": "OriginTCPHandshakeDurationMs",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "OriginTLSHandshakeDurationMs",
+    "type": "INTEGER",
     "mode": "NULLABLE"
   },
   {
@@ -250,8 +315,23 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "RayID",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "SecurityLevel",
     "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "SmartRouteColoID",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "UpperTierColoID",
+    "type": "INTEGER",
     "mode": "NULLABLE"
   },
   {
@@ -307,6 +387,11 @@
   {
     "name": "ZoneID",
     "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ZoneName",
+    "type": "STRING",
     "mode": "NULLABLE"
   }
 ]
