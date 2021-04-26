@@ -12,8 +12,8 @@
 ### Manual Install
 
 ```bash
-BRANCH="master"
-curl -LO "https://github.com/cloudflare/cloudflare-gcp/archive/$BRANCH.zip" && unzip "$BRANCH".zip && cd cloudflare-gcp/logpush-to-biqquery
+BRANCH="logstream-update"
+curl -LO "https://github.com/cloudflare/cloudflare-gcp/archive/refs/heads/$BRANCH.zip" && unzip "$BRANCH".zip && cd cloudflare-gcp-"$BRANCH"/logpush-to-biqquery
 ```
 
 ```bash
