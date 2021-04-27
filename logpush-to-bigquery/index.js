@@ -36,7 +36,7 @@ async function gcsbq (files) {
 }
 
 async function writeLog (logData) {
-  logData = logData.join(',\n')
+  logData = logData.reduce((acc, current) => [...acc, current.name], [])
 
   const metadata = {
     resource: { type: 'global' },
@@ -45,7 +45,9 @@ async function writeLog (logData) {
 
   const entry = log.entry(metadata, logData)
   await log.write(entry)
-  console.log(`Logged: ${logData}`)
+  console.log(
+    `Loaded to ${process.env.DATASET}.${process.env.TABLE}: ${logData}`
+  )
 }
 
 module.exports.runLoadJob = async function (message, context) {
@@ -57,39 +59,30 @@ module.exports.runLoadJob = async function (message, context) {
 
   const loadJobDeadline = context.timestamp
     .setZone('GMT')
-    .minus({ minutes: 3 })
+    .minus({ minutes: 15 })
     .startOf('minute')
 
-  const [deadlineDate, deadlineTime] = [
+  const [deadlineDate, deadlineDt] = [
     loadJobDeadline.toFormat('yyyyMMdd'),
     loadJobDeadline.toFormat(`yyyyMMdd'T'hhmm`)
   ]
 
-  let arrayOfLogpushLogs = []
   let stackdriverEntry = []
 
   try {
-    bucket
-      .getFilesStream({
-        autoPaginate: false,
-        maxResults: 5000,
-        prefix: `${process.env.DIRECTORY}${deadlineDate}/${deadlineTime}`
-      })
-      .on('error', console.error)
-      .on('data', function (file) {
-        let logEndTime = file.name.split('_').slice(1, -1)
-        logEndTime = DateTime.fromISO(logEndTime, { setZone: true })
-        arrayOfLogpushLogs.push(bucket.file(file.name))
-        stackdriverEntry.push(file.name)
-      })
-      .on('end', async function () {
-        if (arrayOfLogpushLogs.length > 0) {
-          await gcsbq(arrayOfLogpushLogs)
-          await writeLog(stackdriverEntry)
-        } else {
-          console.log(`No new logs at ${deadlineTime}`)
-        }
-      })
+    let logFiles = await bucket.getFiles({
+      autoPaginate: false,
+      maxResults: 5000,
+      prefix: `${process.env.DIRECTORY}${deadlineDate}/${deadlineDt}`
+    })
+    logFiles = logFiles[0]
+
+    if (logFiles.length < 1) {
+      return console.log(`No new logs at ${deadlineTime}`)
+    }
+
+    await gcsbq(logFiles)
+    await writeLog(logFiles)
   } catch (e) {
     console.log(e)
   }
