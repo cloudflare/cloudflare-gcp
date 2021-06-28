@@ -1,27 +1,18 @@
 {
-  "name": "nodejs-functions-cloudflare-els",
-  "version": "1.0.0",
-  "private": true,
-  "license": "Apache-2.0",
-  "author": "Cloudflare Inc.",
-  "engines": {
-    "node": ">=4.3.2"
-	},
-	"main":"index.js",
+  "name": "sample-pubsub",
+  "version": "0.0.1",
   "dependencies": {
-    "@google-cloud/bigquery": "^2.0.6",
-    "@google-cloud/storage": "^2.3.4",
-    "fs-extra": "^7.0.1",
-    "node-fetch": "^2.1.2"
+    "@google-cloud/bigquery": "^5.5.0",
+    "@google-cloud/logging": "^9.2.1",
+    "@google-cloud/pubsub": "^0.18.0",
+    "@google-cloud/storage": "^5.8.3",
+    "luxon": "^1.26.0"
+  },
+  "scripts": {
+    "dev": "node -r dotenv/config local.js"
   },
   "devDependencies": {
-    "@google-cloud/nodejs-repo-tools": "^3.2.0",
-    "ava": "^1.3.1",
-    "proxyquire": "1.8.0",
-    "sinon": "3.0.0"
-  },
-  "cloud-repo-tools": {
-    "requiresKeyFile": true,
-    "requiresProjectId": true
+    "dotenv": "^8.2.0",
+    "prettier": "^2.2.1"
   }
 }
