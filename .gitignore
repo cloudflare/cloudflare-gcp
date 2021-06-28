@@ -48,5 +48,6 @@ cli/node_modules
 
 logpush-to-bigquery/.DS_Store
 logpush-to-bigquery/node_modules
+logpush-to-bigquery/local.js
 cli/dist
 cli/confs
