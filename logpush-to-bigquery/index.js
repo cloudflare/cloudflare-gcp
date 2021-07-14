@@ -78,7 +78,7 @@ module.exports.runLoadJob = async function (message, context) {
     logFiles = logFiles[0]
 
     if (logFiles.length < 1) {
-      return console.log(`No new logs at ${deadlineTime}`)
+      return console.log(`No new logs at ${deadlineDt}`)
     }
 
     await gcsbq(logFiles)
