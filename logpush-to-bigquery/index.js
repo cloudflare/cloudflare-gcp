@@ -1,18 +1,19 @@
-const { Storage } = require('@google-cloud/storage')
-const { BigQuery } = require('@google-cloud/bigquery')
-const { Logging } = require('@google-cloud/logging')
-const { DateTime } = require('luxon')
+const { Storage }  = require('@google-cloud/storage');
+const { BigQuery } = require('@google-cloud/bigquery');
+const { PubSub }   = require('@google-cloud/pubsub');
 
-const storage = new Storage()
-const bigquery = new BigQuery()
-const logging = new Logging()
-const log = logging.log('logpush-to-bigquery-sink')
-const bucket = storage.bucket(process.env.BUCKET_NAME)
+const bigquery = new BigQuery();
+const pubsub   = new PubSub();
+const storage  = new Storage();
+
+const bucket    = storage.bucket(process.env.BUCKET_NAME);
+const fileSub   = pubsub.subscription(process.env.FILE_SUBSCRIPTION_NAME);
+const fileTopic = pubsub.topic(process.env.FILE_TOPIC_NAME);
 
 async function gcsbq (files) {
-  const schema = require(`./${process.env.SCHEMA}`)
-  const datasetId = process.env.DATASET
-  const tableId = process.env.TABLE
+  const schema = require(`./${process.env.SCHEMA}`);
+  const datasetId = process.env.DATASET;
+  const tableId = process.env.TABLE;
   /* Configure the load job and ignore values undefined in schema */
   const metadata = {
     sourceFormat: 'NEWLINE_DELIMITED_JSON',
@@ -20,70 +21,67 @@ async function gcsbq (files) {
       fields: schema
     },
     ignoreUnknownValues: true
-  }
-
-  const addToTable = async tableId => {
-    const dataset = await bigquery.dataset(datasetId).get({ autoCreate: true })
-    const table = await dataset[0].table(tableId).get({ autoCreate: true })
-    return table[0].createLoadJob(files, metadata)
-  }
+  };
 
   try {
-    return addToTable(tableId)
-  } catch (e) {
-    console.log(e)
+    const [dataset] = await bigquery.dataset(datasetId).get({ autoCreate: true });
+    const [table] = await dataset.table(tableId).get({ autoCreate: true });
+    return table.createLoadJob(files, metadata)
+  } catch (err) {
+    console.error(err);
   }
 }
 
-async function writeLog (logData) {
-  logData = logData.reduce((acc, current) => [...acc, current.name], [])
+async function getFilesFromPubSub (timeout=30) {
+  return new Promise((resolve) => {
+    var messageCount = 0;
+    var fileNames = [];
 
-  const metadata = {
-    resource: { type: 'global' },
-    severity: 'INFO'
-  }
+    const messageHandler = message => {
+      //console.log(`Received message ${message.id}:`);
+      //console.log(`\tData: ${message.data}`);
+      //console.log(`\tAttributes: ${message.attributes}`);
+      messageCount += 1;
+      // Limit the files we pull to the max # of source URIs allowed in BigQuery Load Jobs
+      // See: https://cloud.google.com/bigquery/quotas#load_jobs
+      if (messageCount > 10000) return;
+      fileNames.push(message.data.toString());
+      message.ack();
+    };
 
-  const entry = log.entry(metadata, logData)
-  await log.write(entry)
-  console.log(
-    `Loaded to ${process.env.DATASET}.${process.env.TABLE}: ${logData}`
-  )
+    fileSub.on('message', messageHandler);
+  
+    setTimeout(() => {
+      fileSub.removeListener('message', messageHandler);
+      console.log(`${messageCount} message(s) received.`);
+      resolve(fileNames);
+    }, timeout * 1000);
+  });
 }
 
 module.exports.runLoadJob = async function (message, context) {
-  if (!context) {
-    context = {}
-    context.timestamp = new Date().toISOString()
-  }
-  context.timestamp = DateTime.fromISO(context.timestamp)
-
-  const loadJobDeadline = context.timestamp
-    .setZone('GMT')
-    .minus({ minutes: 15 })
-    .startOf('minute')
-
-  const [deadlineDate, deadlineDt] = [
-    loadJobDeadline.toFormat('yyyyMMdd'),
-    loadJobDeadline.toFormat(`yyyyMMdd'T'hhmm`)
-  ]
-
-  let stackdriverEntry = []
-
+  // We don't need to use the `message` or `context` here since we're just getting triggered by Cloud Scheduler
+  // Get new file names from PubSub populated by `runNewFiles` and batch load them into BigQuery
   try {
-    let logFiles = await bucket.getFiles({
-      autoPaginate: false,
-      maxResults: 5000,
-      prefix: `${process.env.DIRECTORY}${deadlineDate}/${deadlineDt}`
-    })
-    logFiles = logFiles[0]
-
-    if (logFiles.length < 1) {
-      return console.log(`No new logs at ${deadlineTime}`)
+    const fileNames = await getFilesFromPubSub();
+    if (fileNames.length > 0) {
+      console.log(`Received files from PubSub: ${fileNames}`);
+      const [bqJob] = await gcsbq(fileNames.map(fileName => bucket.file(fileName))); 
+      console.log(`Submitted BigQuery Job id: '${bqJob.id}'`);
     }
+  } catch (err) {
+    console.error(err)
+  }
+}
 
-    await gcsbq(logFiles)
-    await writeLog(logFiles)
-  } catch (e) {
-    console.log(e)
+module.exports.runNewFiles = async function (file, context) {
+  // This function is triggered by `google.storage.objects.finalize` on the GCS bucket for Logpush
+  // Push file names into shared PubSub queue for consumption by separately scheduled `runLoadJob` function
+  console.log(`Detected new file: ${file.name}`)
+  try {
+    const messageId = await fileTopic.publish(Buffer.from(file.name));
+    console.log(`Message ${messageId} published.`);
+  } catch(err) {
+    console.error(err)
   }
 }
