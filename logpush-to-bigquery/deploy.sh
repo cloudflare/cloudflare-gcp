@@ -18,7 +18,7 @@ gcloud pubsub topics create $TOPIC_NAME
 gcloud scheduler jobs create pubsub cf_logs_cron --schedule="* * * * *" --topic=$TOPIC_NAME --message-body="60 seconds passed"
 # Deploy function
 gcloud functions deploy $FN_NAME \
-  --runtime nodejs10 \
+  --runtime nodejs12 \
   --trigger-topic $TOPIC_NAME \
   --region=$REGION \
   --memory=1024MB \
