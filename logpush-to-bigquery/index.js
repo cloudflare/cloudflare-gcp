@@ -64,7 +64,7 @@ module.exports.runLoadJob = async function (message, context) {
 
   const [deadlineDate, deadlineDt] = [
     loadJobDeadline.toFormat('yyyyMMdd'),
-    loadJobDeadline.toFormat(`yyyyMMdd'T'hhmm`)
+    loadJobDeadline.toFormat(`yyyyMMdd'T'HHmm`)
   ]
 
   let stackdriverEntry = []
