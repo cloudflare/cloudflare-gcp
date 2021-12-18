@@ -64,17 +64,24 @@ module.exports.runLoadJob = async function (message, context) {
 
   const [deadlineDate, deadlineDt] = [
     loadJobDeadline.toFormat('yyyyMMdd'),
-    loadJobDeadline.toFormat(`yyyyMMdd'T'hhmm`)
+    loadJobDeadline.toFormat(`yyyyMMdd'T'HHmm`)
   ]
 
   let stackdriverEntry = []
+
+  let prefix = `${process.env.DIRECTORY}${deadlineDate}/${deadlineDt}`.trim()
+
+  if (prefix.startsWith('/')) {
+    prefix = prefix.slice(1)
+  }
 
   try {
     let logFiles = await bucket.getFiles({
       autoPaginate: false,
       maxResults: 5000,
-      prefix: `${process.env.DIRECTORY}${deadlineDate}/${deadlineDt}`
+      prefix
     })
+
     logFiles = logFiles[0]
 
     if (logFiles.length < 1) {
