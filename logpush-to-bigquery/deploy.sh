@@ -2,7 +2,7 @@
 
 SCHEMA="schema-http.json"
 # The name of the subdirectory in your bucket used for Cloudflare Logpush logs,
-# for example, "logs/". If there is no subdirectory, use "/"
+# for example, "logs/". If there is no subdirectory, use ""
 DIRECTORY="logs/"
 BUCKET_NAME="examplecom-logs"
 DATASET="cloudflare_logstream"
