@@ -1,0 +1,112 @@
+[
+  {
+    "name": "ColoID",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ColoName",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "Datetime",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "DeviceID",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "DstIP",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "DstPort",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "Email",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "Location",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "MatchedCategoryIDs",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "Policy",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "PolicyID",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "Protocol",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "QueryCategoryIDs",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "QueryNamestring",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "QueryNameReversed",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "QuerySize",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "QueryType",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "RData",
+    "type": "STRING",
+    "mode": "REPEATED"
+  },
+  {
+    "name": "ResolverDecision",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "SrcIP",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "SrcPort",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "UserID",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

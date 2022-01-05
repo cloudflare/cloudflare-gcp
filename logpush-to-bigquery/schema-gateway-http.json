@@ -1,0 +1,132 @@
+[
+  {
+    "name": "AccountID",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "Action",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "BlockedFileHash",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "BlockedFileName",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "BlockedFileReason",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "BlockedFileSize",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "BlockedFileType",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "Datetime",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "DestinationIP",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "DestinationPort",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "DeviceID",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "DownloadedFileNames",
+    "type": "STRING",
+    "MODE": "REPEATABLE"
+  },
+  {
+    "name": "Email",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "HTTPHost",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "HTTPMethod",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "HTTPVersion",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "IsIsolated",
+    "type": "BOOLEAN",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "PolicyID",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "Referer",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "RequestID",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "SourceIP",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "SourcePort",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "URL",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "UploadedFileNames",
+    "type": "STRING",
+    "mode": "REPEATABLE"
+  },
+  {
+    "name": "UserAgent",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "UserID",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  }
+]
