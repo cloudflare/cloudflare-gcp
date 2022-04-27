@@ -42,7 +42,7 @@ FN_NAME=""
 # optional - the name of the pubsub topic that will be published every minute
 TOPIC_NAME="every_minute"
 
-# optinal - name of the cron job that is being created.
+# optional - name of the cron job that is being created.
 CRON_JOB_NAME="" 
 
 
