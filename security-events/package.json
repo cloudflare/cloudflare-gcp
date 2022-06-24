@@ -28,7 +28,7 @@
     "moment": "^2.24.0",
     "ndjson": "^1.5.0",
     "ndjson-parse": "^1.0.4",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.7",
     "quick-lru": "^2.0.0"
   }
 }
