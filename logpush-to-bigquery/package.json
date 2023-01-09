@@ -6,7 +6,7 @@
     "@google-cloud/logging": "^9.2.1",
     "@google-cloud/pubsub": "^0.18.0",
     "@google-cloud/storage": "^5.8.3",
-    "luxon": "^1.26.0"
+    "luxon": "^1.28.1"
   },
   "scripts": {
     "dev": "node -r dotenv/config local.js"
