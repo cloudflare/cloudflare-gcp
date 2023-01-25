@@ -1,0 +1,78 @@
+[
+  {
+    "mode": "REPEATED",
+    "name": "ScriptTags",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "ScriptName",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "Outcome",
+    "type": "STRING"
+  },
+  {
+    "mode": "REPEATED",
+    "name": "Exceptions",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "EventType",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "EventTimestampMs",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "REPEATED",
+    "name": "Logs",
+    "type": "STRING"
+  },
+  {
+    "fields": [
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE",
+            "name": "Status",
+            "type": "INTEGER"
+          }
+        ],
+        "mode": "NULLABLE",
+        "name": "Response",
+        "type": "RECORD"
+      },
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE",
+            "name": "Method",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "URL",
+            "type": "STRING"
+          }
+        ],
+        "mode": "NULLABLE",
+        "name": "Request",
+        "type": "RECORD"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "RayID",
+        "type": "STRING"
+      }
+    ],
+    "mode": "NULLABLE",
+    "name": "Event",
+    "type": "RECORD"
+  }
+]
