@@ -1,3 +1,5 @@
+crazybowREADME.md
+
 # Cloudflare + Google Cloud | Integrations
 Integrate Cloudflare Enterprise Log Push with BigQuery and Security Command Center on Google Cloud.
 
