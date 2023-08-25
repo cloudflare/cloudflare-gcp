@@ -1,8 +1,8 @@
 [
   {
     "name": "BotDetectionIDs",
-    "type": "ARRAY<INTEGER>",
-    "mode": "NULLABLE"
+    "type": "INTEGER",
+    "mode": "REPEATED"
   },
   {
     "name": "BotScore",
@@ -16,8 +16,8 @@
   },
   {
     "name": "BotTags",
-    "type": "ARRAY<STRING>",
-    "mode": "NULLABLE"
+    "type": "STRING",
+    "mode": "REPEATED"
   },
   {
     "name": "CacheCacheStatus",
@@ -161,13 +161,13 @@
   },
   {
     "name": "ContentScanObjResults",
-    "type": "ARRAY<STRING>",
-    "mode": "NULLABLE"
+    "type": "STRING",
+    "mode": "REPEATED"
   },
   {
     "name": "ContentScanObjTypes",
-    "type": "ARRAY<STRING>",
-    "mode": "NULLABLE"
+    "type": "STRING",
+    "mode": "REPEATED"
   },
   {
     "name": "EdgeCFConnectingO2O",
@@ -361,8 +361,8 @@
   },
   {
     "name": "SecurityActions",
-    "type": "ARRAY<STRING>",
-    "mode": "NULLABLE"
+    "type": "STRING",
+    "mode": "REPEATED"
   },
   {
     "name": "SecurityLevel",
@@ -381,13 +381,13 @@
   },
   {
     "name": "SecurityRuleIDs",
-    "type": "ARRAY<STRING>",
-    "mode": "NULLABLE"
+    "type": "STRING",
+    "mode": "REPEATED"
   },
   {
     "name": "SecuritySources",
-    "type": "ARRAY<STRING>",
-    "mode": "NULLABLE"
+    "type": "STRING",
+    "mode": "REPEATED"
   },  
   {
     "name": "SmartRouteColoID",
