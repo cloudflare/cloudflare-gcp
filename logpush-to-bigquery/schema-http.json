@@ -1,5 +1,10 @@
 [
   {
+    "name": "BotDetectionIDs",
+    "type": "ARRAY<INT64>",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "BotScore",
     "type": "INTEGER",
     "mode": "NULLABLE"
@@ -10,8 +15,18 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "BotTags",
+    "type": "ARRAY<STRING>",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "CacheCacheStatus",
     "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "CacheReserveUsed",
+    "type": "BOOLEAN",
     "mode": "NULLABLE"
   },
   {
@@ -61,6 +76,11 @@
   },
   {
     "name": "ClientMTLSAuthStatus",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ClientRegionCode",
     "type": "STRING",
     "mode": "NULLABLE"
   },
@@ -140,6 +160,16 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "ContentScanObjResults",
+    "type": "ARRAY<STRING>",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ContentScanObjTypes",
+    "type": "ARRAY<STRING>",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "EdgeCFConnectingO2O",
     "type": "BOOLEAN",
     "mode": "NULLABLE"
@@ -183,7 +213,7 @@
     "name": "EdgeRateLimitID",
     "type": "INTEGER",
     "mode": "NULLABLE"
-  },
+  }, 
   {
     "name": "EdgeRequestHost",
     "type": "STRING",
@@ -230,6 +260,11 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "JA3Hash",
+    "type": "STRING",
+    "mode": "REPEATED"
+  },
+  {
     "name": "FirewallMatchesActions",
     "type": "STRING",
     "mode": "REPEATED"
@@ -263,7 +298,7 @@
     "name": "OriginResponseBytes",
     "type": "INTEGER",
     "mode": "NULLABLE"
-  },
+  },  
   {
     "name": "OriginResponseDurationMs",
     "type": "INTEGER",
@@ -320,10 +355,40 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "SecurityAction",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "SecurityActions",
+    "type": "ARRAY<STRING>",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "SecurityLevel",
     "type": "STRING",
     "mode": "NULLABLE"
   },
+  {
+    "name": "SecurityRuleDescription",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "SecurityRuleID",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "SecurityRuleIDs",
+    "type": "ARRAY<STRING>",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "SecuritySources",
+    "type": "ARRAY<STRING>",
+    "mode": "NULLABLE"
+  },  
   {
     "name": "SmartRouteColoID",
     "type": "INTEGER",
@@ -340,6 +405,11 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "WAFAttackScore",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },  
+  {
     "name": "WAFFlags",
     "type": "INTEGER",
     "mode": "NULLABLE"
@@ -355,6 +425,11 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "WAFRCEAttackScore",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "WAFRuleID",
     "type": "STRING",
     "mode": "NULLABLE"
@@ -362,6 +437,16 @@
   {
     "name": "WAFRuleMessage",
     "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "WAFSQLiAttackScore",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "WAFXSSAttackScore",
+    "type": "INTEGER",
     "mode": "NULLABLE"
   },
   {
@@ -385,7 +470,7 @@
     "mode": "NULLABLE"
   },
   {
-    "name": "ZoneID",
+    "name": "WorkerWallTimeUs",
     "type": "INTEGER",
     "mode": "NULLABLE"
   },
