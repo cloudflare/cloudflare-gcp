@@ -2,11 +2,10 @@
   "name": "sample-pubsub",
   "version": "0.0.1",
   "dependencies": {
-    "@google-cloud/bigquery": "^5.5.0",
-    "@google-cloud/logging": "^9.2.1",
-    "@google-cloud/pubsub": "^0.18.0",
-    "@google-cloud/storage": "^5.8.3",
-    "luxon": "^1.26.0"
+    "@google-cloud/bigquery": "^7.4.0",
+    "@google-cloud/logging": "^11.0.0",
+    "@google-cloud/storage": "^7.7.0",
+    "luxon": "^3.4.4"
   },
   "scripts": {
     "dev": "node -r dotenv/config local.js"
