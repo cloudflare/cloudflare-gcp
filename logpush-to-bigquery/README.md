@@ -26,6 +26,7 @@ TABLE="" # optional – BigQuery table to write to. Will be created if necessary
 FN_NAME="" # optional - the name of your Cloud Function | default: gcsbq
 # optional - the name of the pubsub topic that will be published every minute
 TOPIC_NAME=""
+CRON_JOB_NAME="" # optional - name of the cron job that is being created.
 # Deploy to GCP
 sh ./deploy.sh
 ```
