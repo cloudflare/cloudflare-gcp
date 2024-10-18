@@ -1,7 +1,12 @@
 [
   {
+    "name": "BotDetectionIDs",
+    "type": "INT64",
+    "mode": "REPEATED"
+  },
+  {
     "name": "BotScore",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
@@ -10,18 +15,28 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "BotTags",
+    "type": "STRING",
+    "mode": "REPEATED"
+  },
+  {
     "name": "CacheCacheStatus",
     "type": "STRING",
     "mode": "NULLABLE"
   },
   {
+    "name": "CacheReserveUsed",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "CacheResponseBytes",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
     "name": "CacheResponseStatus",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
@@ -31,7 +46,7 @@
   },
   {
     "name": "ClientASN",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
@@ -65,8 +80,13 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "ClientRegionCode",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "ClientRequestBytes",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
@@ -116,7 +136,7 @@
   },
   {
     "name": "ClientSrcPort",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
@@ -131,13 +151,23 @@
   },
   {
     "name": "ClientTCPRTTMs",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
     "name": "ClientXRequestedWith",
     "type": "STRING",
     "mode": "NULLABLE"
+  },
+  {
+    "name": "ContentScanObjResults",
+    "type": "STRING",
+    "mode": "REPEATED"
+  },
+  {
+    "name": "ContentScanObjTypes",
+    "type": "STRING",
+    "mode": "REPEATED"
   },
   {
     "name": "EdgeCFConnectingO2O",
@@ -151,7 +181,7 @@
   },
   {
     "name": "EdgeColoID",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
@@ -181,9 +211,9 @@
   },
   {
     "name": "EdgeRateLimitID",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
-  },
+  }, 
   {
     "name": "EdgeRequestHost",
     "type": "STRING",
@@ -191,17 +221,17 @@
   },
   {
     "name": "EdgeResponseBodyBytes",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
     "name": "EdgeResponseBytes",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
     "name": "EdgeResponseCompressionRatio",
-    "type": "FLOAT",
+    "type": "FLOAT64",
     "mode": "NULLABLE"
   },
   {
@@ -211,7 +241,7 @@
   },
   {
     "name": "EdgeResponseStatus",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
@@ -226,8 +256,13 @@
   },
   {
     "name": "EdgeTimeToFirstByteMs",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
+  },
+  {
+    "name": "JA3Hash",
+    "type": "STRING",
+    "mode": "REPEATED"
   },
   {
     "name": "FirewallMatchesActions",
@@ -246,7 +281,7 @@
   },
   {
     "name": "OriginDNSResponseTimeMs",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
@@ -256,22 +291,22 @@
   },
   {
     "name": "OriginRequestHeaderSendDurationMs",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
     "name": "OriginResponseBytes",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
-  },
+  },  
   {
     "name": "OriginResponseDurationMs",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
     "name": "OriginResponseHeaderReceiveDurationMs",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
@@ -286,12 +321,12 @@
   },
   {
     "name": "OriginResponseStatus",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
     "name": "OriginResponseTime",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
@@ -301,12 +336,12 @@
   },
   {
     "name": "OriginTCPHandshakeDurationMs",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
     "name": "OriginTLSHandshakeDurationMs",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
@@ -320,18 +355,48 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "SecurityAction",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "SecurityActions",
+    "type": "STRING",
+    "mode": "REPEATED"
+  },
+  {
     "name": "SecurityLevel",
     "type": "STRING",
     "mode": "NULLABLE"
   },
   {
+    "name": "SecurityRuleDescription",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "SecurityRuleID",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "SecurityRuleIDs",
+    "type": "STRING",
+    "mode": "REPEATED"
+  },
+  {
+    "name": "SecuritySources",
+    "type": "STRING",
+    "mode": "REPEATED"
+  },  
+  {
     "name": "SmartRouteColoID",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
     "name": "UpperTierColoID",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
@@ -340,8 +405,13 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "WAFAttackScore",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },  
+  {
     "name": "WAFFlags",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
@@ -355,6 +425,11 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "WAFRCEAttackScore",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "WAFRuleID",
     "type": "STRING",
     "mode": "NULLABLE"
@@ -365,8 +440,18 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "WAFSQLiAttackScore",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "WAFXSSAttackScore",
+    "type": "INT64",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "WorkerCPUTime",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
@@ -381,12 +466,12 @@
   },
   {
     "name": "WorkerSubrequestCount",
-    "type": "INTEGER",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
-    "name": "ZoneID",
-    "type": "INTEGER",
+    "name": "WorkerWallTimeUs",
+    "type": "INT64",
     "mode": "NULLABLE"
   },
   {
