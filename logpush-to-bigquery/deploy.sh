@@ -15,10 +15,11 @@ TOPIC_NAME="every_minute"
 # Create pubsub topic
 gcloud pubsub topics create $TOPIC_NAME
 # Create cron job
-gcloud scheduler jobs create pubsub cf_logs_cron --schedule="* * * * *" --topic=$TOPIC_NAME --message-body="60 seconds passed"
+gcloud scheduler jobs create pubsub cf_logs_cron --location=$REGION --schedule="* * * * *" --topic=$TOPIC_NAME --message-body="60 seconds passed"
 # Deploy function
 gcloud functions deploy $FN_NAME \
-  --runtime nodejs12 \
+  --gen2 \
+  --runtime nodejs20 \
   --trigger-topic $TOPIC_NAME \
   --region=$REGION \
   --memory=1024MB \
