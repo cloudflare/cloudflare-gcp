@@ -156,7 +156,7 @@
   },
   {
     "name": "EdgeEndTimestamp",
-    "type": "TIMESTAMP",
+    "type": "INTEGER",
     "mode": "NULLABLE"
   },
   {
@@ -221,7 +221,7 @@
   },
   {
     "name": "EdgeStartTimestamp",
-    "type": "TIMESTAMP",
+    "type": "INTEGER",
     "mode": "NULLABLE"
   },
   {

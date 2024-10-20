@@ -71,12 +71,12 @@
   },
   {
     "name": "ConnectTimestamp",
-    "type": "STRING",
+    "type": "INTEGER",
     "MODE": "NULLABLE"
   },
   {
     "name": "DisconnectTimestamp",
-    "type": "STRING",
+    "type": "INTEGER",
     "MODE": "NULLABLE"
   },
   {
@@ -151,7 +151,7 @@
   },
   {
     "name": "Timestamp",
-    "type": "TIMESTAMP",
+    "type": "INTEGER",
     "MODE": "NULLABLE"
   }
 ]
