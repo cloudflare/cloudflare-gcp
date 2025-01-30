@@ -325,6 +325,36 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "SecurityAction",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "SecurityActions",
+    "type": "STRING",
+    "mode": "REPEATED"
+  },
+  {
+    "name": "SecurityRuleDescription",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "SecurityRuleID",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "SecurityRuleIDs",
+    "type": "STRING",
+    "mode": "REPEATED"
+  },
+  {
+    "name": "SecuritySources",
+    "type": "STRING",
+    "mode": "REPEATED"
+  },
+  {
     "name": "SmartRouteColoID",
     "type": "INTEGER",
     "mode": "NULLABLE"
@@ -337,6 +367,11 @@
   {
     "name": "WAFAction",
     "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "WAFAttackScore",
+    "type": "INTEGER",
     "mode": "NULLABLE"
   },
   {
@@ -355,6 +390,11 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "WAFRCEAttackScore",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "WAFRuleID",
     "type": "STRING",
     "mode": "NULLABLE"
@@ -362,6 +402,16 @@
   {
     "name": "WAFRuleMessage",
     "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "WAFSQLiAttackScore",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "WAFXSSAttackScore",
+    "type": "INTEGER",
     "mode": "NULLABLE"
   },
   {
@@ -382,6 +432,16 @@
   {
     "name": "WorkerSubrequestCount",
     "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "WorkerWallTimeUs",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "RequestHeaders",
+    "type": "JSON",
     "mode": "NULLABLE"
   },
   {
