@@ -1,0 +1,786 @@
+[
+  {
+    "colo_id": 0,
+    "colo_code": "SFO-DOG"
+  },
+  {
+    "colo_id": 1,
+    "colo_code": "ORD"
+  },
+  {
+    "colo_id": 2,
+    "colo_code": "ASH"
+  },cd 
+  {
+    "colo_id": 4,
+    "colo_code": "SJC"
+  },
+  {
+    "colo_id": 11,
+    "colo_code": "EWR"
+  },
+  {
+    "colo_id": 12,
+    "colo_code": "LAX"
+  },
+  {
+    "colo_id": 14,
+    "colo_code": "ORD"
+  },
+  {
+    "colo_id": 15,
+    "colo_code": "DFW"
+  },
+  {
+    "colo_id": 16,
+    "colo_code": "IAD"
+  },
+  {
+    "colo_id": 17,
+    "colo_code": "MIA"
+  },
+  {
+    "colo_id": 18,
+    "colo_code": "FRA"
+  },
+  {
+    "colo_id": 19,
+    "colo_code": "CDG"
+  },
+  {
+    "colo_id": 20,
+    "colo_code": "AMS"
+  },
+  {
+    "colo_id": 21,
+    "colo_code": "LHR"
+  },
+  {
+    "colo_id": 22,
+    "colo_code": "NRT"
+  },
+  {
+    "colo_id": 23,
+    "colo_code": "HKG"
+  },
+  {
+    "colo_id": 24,
+    "colo_code": "SIN"
+  },
+  {
+    "colo_id": 25,
+    "colo_code": "SFO"
+  },
+  {
+    "colo_id": 26,
+    "colo_code": "SYD"
+  },
+  {
+    "colo_id": 27,
+    "colo_code": "ATL"
+  },
+  {
+    "colo_id": 28,
+    "colo_code": "SEA"
+  },
+  {
+    "colo_id": 29,
+    "colo_code": "YYZ"
+  },
+  {
+    "colo_id": 30,
+    "colo_code": "VIE"
+  },
+  {
+    "colo_id": 31,
+    "colo_code": "PRG"
+  },
+  {
+    "colo_id": 32,
+    "colo_code": "ARN"
+  },
+  {
+    "colo_id": 33,
+    "colo_code": "WAW"
+  },
+  {
+    "colo_id": 34,
+    "colo_code": "ICN"
+  },
+  {
+    "colo_id": 35,
+    "colo_code": "SIN"
+  },
+  {
+    "colo_id": 36,
+    "colo_code": "PDX"
+  },
+  {
+    "colo_id": 37,
+    "colo_code": "FRA"
+  },
+  {
+    "colo_id": 38,
+    "colo_code": "SCL"
+  },
+  {
+    "colo_id": 39,
+    "colo_code": "MXP"
+  },
+  {
+    "colo_id": 40,
+    "colo_code": "MAD"
+  },
+  {
+    "colo_id": 41,
+    "colo_code": "MDE"
+  },
+  {
+    "colo_id": 42,
+    "colo_code": "GRU"
+  },
+  {
+    "colo_id": 43,
+    "colo_code": "LIM"
+  },
+  {
+    "colo_id": 44,
+    "colo_code": "EZE"
+  },
+  {
+    "colo_id": 45,
+    "colo_code": "JNB"
+  },
+  {
+    "colo_id": 46,
+    "colo_code": "AKL"
+  },
+  {
+    "colo_id": 47,
+    "colo_code": "MEL"
+  },
+  {
+    "colo_id": 48,
+    "colo_code": "DUS"
+  },
+  {
+    "colo_id": 49,
+    "colo_code": "MRS"
+  },
+  {
+    "colo_id": 50,
+    "colo_code": "OTP"
+  },
+  {
+    "colo_id": 51,
+    "colo_code": "KIX"
+  },
+  {
+    "colo_id": 52,
+    "colo_code": "DUB"
+  },
+  {
+    "colo_id": 53,
+    "colo_code": "KWI"
+  },
+  {
+    "colo_id": 54,
+    "colo_code": "DOH"
+  },
+  {
+    "colo_id": 55,
+    "colo_code": "MCT"
+  },
+  {
+    "colo_id": 56,
+    "colo_code": "KUL"
+  },
+  {
+    "colo_id": 57,
+    "colo_code": "DEL"
+  },
+  {
+    "colo_id": 58,
+    "colo_code": "BOM"
+  },
+  {
+    "colo_id": 59,
+    "colo_code": "MAA"
+  },
+  {
+    "colo_id": 60,
+    "colo_code": "DXB"
+  },
+  {
+    "colo_id": 61,
+    "colo_code": "MBA"
+  },
+  {
+    "colo_id": 62,
+    "colo_code": "CAI"
+  },
+  {
+    "colo_id": 63,
+    "colo_code": "MAN"
+  },
+  {
+    "colo_id": 64,
+    "colo_code": "ZRH"
+  },
+  {
+    "colo_id": 65,
+    "colo_code": "CPH"
+  },
+  {
+    "colo_id": 66,
+    "colo_code": "PHX"
+  },
+  {
+    "colo_id": 67,
+    "colo_code": "TXL"
+  },
+  {
+    "colo_id": 68,
+    "colo_code": "MNL"
+  },
+  {
+    "colo_id": 69,
+    "colo_code": "YVR"
+  },
+  {
+    "colo_id": 70,
+    "colo_code": "YUL"
+  },
+  {
+    "colo_id": 71,
+    "colo_code": "FRA"
+  },
+  {
+    "colo_id": 72,
+    "colo_code": "MSP"
+  },
+  {
+    "colo_id": 73,
+    "colo_code": "WAW"
+  },
+  {
+    "colo_id": 74,
+    "colo_code": "SOF"
+  },
+  {
+    "colo_id": 75,
+    "colo_code": "HAM"
+  },
+  {
+    "colo_id": 76,
+    "colo_code": "EDI"
+  },
+  {
+    "colo_id": 77,
+    "colo_code": "MNL"
+  },
+  {
+    "colo_id": 78,
+    "colo_code": "BRU"
+  },
+  {
+    "colo_id": 79,
+    "colo_code": "HEL"
+  },
+  {
+    "colo_id": 80,
+    "colo_code": "TPE"
+  },
+  {
+    "colo_id": 81,
+    "colo_code": "LAS"
+  },
+  {
+    "colo_id": 82,
+    "colo_code": "KBP"
+  },
+  {
+    "colo_id": 83,
+    "colo_code": "OSL"
+  },
+  {
+    "colo_id": 84,
+    "colo_code": "PER"
+  },
+  {
+    "colo_id": 85,
+    "colo_code": "BNE"
+  },
+  {
+    "colo_id": 86,
+    "colo_code": "BKK"
+  },
+  {
+    "colo_id": 87,
+    "colo_code": "DME"
+  },
+  {
+    "colo_id": 88,
+    "colo_code": "ATH"
+  },
+  {
+    "colo_id": 89,
+    "colo_code": "BCN"
+  },
+  {
+    "colo_id": 90,
+    "colo_code": "PTY"
+  },
+  {
+    "colo_id": 92,
+    "colo_code": "BOM"
+  },
+  {
+    "colo_id": 93,
+    "colo_code": "MAA"
+  },
+  {
+    "colo_id": 94,
+    "colo_code": "STL"
+  },
+  {
+    "colo_id": 95,
+    "colo_code": "UIO"
+  },
+  {
+    "colo_id": 96,
+    "colo_code": "LAD"
+  },
+  {
+    "colo_id": 97,
+    "colo_code": "GRU"
+  },
+  {
+    "colo_id": 98,
+    "colo_code": "DEN"
+  },
+  {
+    "colo_id": 99,
+    "colo_code": "LUX"
+  },
+  {
+    "colo_id": 100,
+    "colo_code": "MUC"
+  },
+  {
+    "colo_id": 101,
+    "colo_code": "GIG"
+  },
+  {
+    "colo_id": 102,
+    "colo_code": "PHL"
+  },
+  {
+    "colo_id": 103,
+    "colo_code": "TPA"
+  },
+  {
+    "colo_id": 104,
+    "colo_code": "BKK"
+  },
+  {
+    "colo_id": 105,
+    "colo_code": "CUR"
+  },
+  {
+    "colo_id": 106,
+    "colo_code": "BOS"
+  },
+  {
+    "colo_id": 107,
+    "colo_code": "LIS"
+  },
+  {
+    "colo_id": 108,
+    "colo_code": "SFO"
+  },
+  {
+    "colo_id": 109,
+    "colo_code": "SAN"
+  },
+  {
+    "colo_id": 110,
+    "colo_code": "SCL"
+  },
+  {
+    "colo_id": 111,
+    "colo_code": "CMB"
+  },
+  {
+    "colo_id": 113,
+    "colo_code": "CPT"
+  },
+  {
+    "colo_id": 114,
+    "colo_code": "VIE"
+  },
+  {
+    "colo_id": 115,
+    "colo_code": "BNA"
+  },
+  {
+    "colo_id": 116,
+    "colo_code": "DTW"
+  },
+  {
+    "colo_id": 117,
+    "colo_code": "EVN"
+  },
+  {
+    "colo_id": 118,
+    "colo_code": "IST"
+  },
+  {
+    "colo_id": 119,
+    "colo_code": "PDX"
+  },
+  {
+    "colo_id": 120,
+    "colo_code": "BEG"
+  },
+  {
+    "colo_id": 121,
+    "colo_code": "OMA"
+  },
+  {
+    "colo_id": 122,
+    "colo_code": "JIB"
+  },
+  {
+    "colo_id": 123,
+    "colo_code": "BUD"
+  },
+  {
+    "colo_id": 124,
+    "colo_code": "ZAG"
+  },
+  {
+    "colo_id": 125,
+    "colo_code": "MCI"
+  },
+  {
+    "colo_id": 126,
+    "colo_code": "FCO"
+  },
+  {
+    "colo_id": 127,
+    "colo_code": "BKK"
+  },
+  {
+    "colo_id": 128,
+    "colo_code": "ARN"
+  },
+  {
+    "colo_id": 129,
+    "colo_code": "BKK"
+  },
+  {
+    "colo_id": 130,
+    "colo_code": "RUH"
+  },
+  {
+    "colo_id": 131,
+    "colo_code": "SFO-DOG"
+  },
+  {
+    "colo_id": 132,
+    "colo_code": "KBP"
+  },
+  {
+    "colo_id": 133,
+    "colo_code": "SFO-TEST"
+  },
+  {
+    "colo_id": 134,
+    "colo_code": "HKG"
+  },
+  {
+    "colo_id": 135,
+    "colo_code": "MFE"
+  },
+  {
+    "colo_id": 136,
+    "colo_code": "DUR"
+  },
+  {
+    "colo_id": 137,
+    "colo_code": "PIT"
+  },
+  {
+    "colo_id": 138,
+    "colo_code": "SMF"
+  },
+  {
+    "colo_id": 139,
+    "colo_code": "MRU"
+  },
+  {
+    "colo_id": 140,
+    "colo_code": "MFM"
+  },
+  {
+    "colo_id": 141,
+    "colo_code": "CEB"
+  },
+  {
+    "colo_id": 142,
+    "colo_code": "KTM"
+  },
+  {
+    "colo_id": 143,
+    "colo_code": "SLC"
+  },
+  {
+    "colo_id": 144,
+    "colo_code": "PNH"
+  },
+  {
+    "colo_id": 145,
+    "colo_code": "KEF"
+  },
+  {
+    "colo_id": 146,
+    "colo_code": "BGW"
+  },
+  {
+    "colo_id": 148,
+    "colo_code": "VNO"
+  },
+  {
+    "colo_id": 149,
+    "colo_code": "TLV"
+  },
+  {
+    "colo_id": 150,
+    "colo_code": "BEY"
+  },
+  {
+    "colo_id": 151,
+    "colo_code": "RIX"
+  },
+  {
+    "colo_id": 152,
+    "colo_code": "TLL"
+  },
+  {
+    "colo_id": 153,
+    "colo_code": "YYC"
+  },
+  {
+    "colo_id": 154,
+    "colo_code": "IND"
+  },
+  {
+    "colo_id": 155,
+    "colo_code": "JAX"
+  },
+  {
+    "colo_id": 156,
+    "colo_code": "MEM"
+  },
+  {
+    "colo_id": 157,
+    "colo_code": "MGM"
+  },
+  {
+    "colo_id": 159,
+    "colo_code": "MEX"
+  },
+  {
+    "colo_id": 160,
+    "colo_code": "TLH"
+  },
+  {
+    "colo_id": 161,
+    "colo_code": "BOG"
+  },
+  {
+    "colo_id": 162,
+    "colo_code": "IAH"
+  },
+  {
+    "colo_id": 163,
+    "colo_code": "ORF"
+  },
+  {
+    "colo_id": 164,
+    "colo_code": "SFO"
+  },
+  {
+    "colo_id": 166,
+    "colo_code": "KIV"
+  },
+  {
+    "colo_id": 167,
+    "colo_code": "YXE"
+  },
+  {
+    "colo_id": 168,
+    "colo_code": "YWG"
+  },
+  {
+    "colo_id": 169,
+    "colo_code": "LUX"
+  },
+  {
+    "colo_id": 171,
+    "colo_code": "SFO"
+  },
+  {
+    "colo_id": 172,
+    "colo_code": "RIC"
+  },
+  {
+    "colo_id": 504,
+    "colo_code": "SJC-PIG"
+  },
+  {
+    "colo_id": 569,
+    "colo_code": "YVR-PIG"
+  },
+  {
+    "colo_id": 800,
+    "colo_code": "TAO"
+  },
+  {
+    "colo_id": 801,
+    "colo_code": "FOC"
+  },
+  {
+    "colo_id": 802,
+    "colo_code": "HNY"
+  },
+  {
+    "colo_id": 803,
+    "colo_code": "SZX"
+  },
+  {
+    "colo_id": 804,
+    "colo_code": "SHE"
+  },
+  {
+    "colo_id": 805,
+    "colo_code": "LYA"
+  },
+  {
+    "colo_id": 806,
+    "colo_code": "HGH"
+  },
+  {
+    "colo_id": 807,
+    "colo_code": "JXG"
+  },
+  {
+    "colo_id": 808,
+    "colo_code": "TSN"
+  },
+  {
+    "colo_id": 809,
+    "colo_code": "CAN"
+  },
+  {
+    "colo_id": 810,
+    "colo_code": "CTU"
+  },
+  {
+    "colo_id": 811,
+    "colo_code": "NAY"
+  },
+  {
+    "colo_id": 812,
+    "colo_code": "XIY"
+  },
+  {
+    "colo_id": 813,
+    "colo_code": "SJW"
+  },
+  {
+    "colo_id": 814,
+    "colo_code": "CGO"
+  },
+  {
+    "colo_id": 815,
+    "colo_code": "NNG"
+  },
+  {
+    "colo_id": 816,
+    "colo_code": "FUO"
+  },
+  {
+    "colo_id": 817,
+    "colo_code": "SZV"
+  },
+  {
+    "colo_id": 818,
+    "colo_code": "TNA"
+  },
+  {
+    "colo_id": 819,
+    "colo_code": "WUH"
+  },
+  {
+    "colo_id": 820,
+    "colo_code": "WUX"
+  },
+  {
+    "colo_id": 821,
+    "colo_code": "XIY"
+  },
+  {
+    "colo_id": 822,
+    "colo_code": "TAO"
+  },
+  {
+    "colo_id": 823,
+    "colo_code": "CSX"
+  },
+  {
+    "colo_id": 824,
+    "colo_code": "CAN"
+  },
+  {
+    "colo_id": 825,
+    "colo_code": "SHA"
+  },
+  {
+    "colo_id": 826,
+    "colo_code": "SHA"
+  },
+  {
+    "colo_id": 827,
+    "colo_code": "NGB"
+  },
+  {
+    "colo_id": 828,
+    "colo_code": "SHA"
+  },
+  {
+    "colo_id": 829,
+    "colo_code": "CKG"
+  },
+  {
+    "colo_id": 830,
+    "colo_code": "TSN"
+  },
+  {
+    "colo_id": 831,
+    "colo_code": "TSN"
+  },
+  {
+    "colo_id": 832,
+    "colo_code": "SZX"
+  },
+  {
+    "colo_id": 900,
+    "colo_code": "PVG"
+  },
+  {
+    "colo_id": 901,
+    "colo_code": "SZX"
+  }
+]
