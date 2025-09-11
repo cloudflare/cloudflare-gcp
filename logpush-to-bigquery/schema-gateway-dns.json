@@ -1,112 +1,132 @@
 [
   {
-    "name": "ColoID",
-    "type": "INTEGER",
-    "mode": "NULLABLE"
+    "name": "AccountID",
+    "type": "STRING",
+    "MODE": "NULLABLE"
   },
   {
-    "name": "ColoName",
+    "name": "Action",
     "type": "STRING",
-    "mode": "NULLABLE"
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "BlockedFileHash",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "BlockedFileName",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "BlockedFileReason",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "BlockedFileSize",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "BlockedFileType",
+    "type": "STRING",
+    "MODE": "NULLABLE"
   },
   {
     "name": "Datetime",
     "type": "STRING",
-    "mode": "NULLABLE"
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "DestinationIP",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "DestinationPort",
+    "type": "STRING",
+    "MODE": "NULLABLE"
   },
   {
     "name": "DeviceID",
     "type": "STRING",
-    "mode": "NULLABLE"
+    "MODE": "NULLABLE"
   },
   {
-    "name": "DstIP",
+    "name": "DownloadedFileNames",
     "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "DstPort",
-    "type": "INTEGER",
-    "mode": "NULLABLE"
+    "MODE": "REPEATABLE"
   },
   {
     "name": "Email",
     "type": "STRING",
-    "mode": "NULLABLE"
+    "MODE": "NULLABLE"
   },
   {
-    "name": "Location",
+    "name": "HTTPHost",
     "type": "STRING",
-    "mode": "NULLABLE"
+    "MODE": "NULLABLE"
   },
   {
-    "name": "MatchedCategoryIDs",
-    "type": "INTEGER",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "Policy",
+    "name": "HTTPMethod",
     "type": "STRING",
-    "mode": "NULLABLE"
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "HTTPVersion",
+    "type": "STRING",
+    "MODE": "NULLABLE"
+  },
+  {
+    "name": "IsIsolated",
+    "type": "BOOLEAN",
+    "MODE": "NULLABLE"
   },
   {
     "name": "PolicyID",
     "type": "STRING",
-    "mode": "NULLABLE"
+    "MODE": "NULLABLE"
   },
   {
-    "name": "Protocol",
+    "name": "Referer",
     "type": "STRING",
-    "mode": "NULLABLE"
+    "MODE": "NULLABLE"
   },
   {
-    "name": "QueryCategoryIDs",
-    "type": "INTEGER",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "QueryNamestring",
+    "name": "RequestID",
     "type": "STRING",
-    "mode": "NULLABLE"
+    "MODE": "NULLABLE"
   },
   {
-    "name": "QueryNameReversed",
+    "name": "SourceIP",
     "type": "STRING",
-    "mode": "NULLABLE"
+    "MODE": "NULLABLE"
   },
   {
-    "name": "QuerySize",
-    "type": "INTEGER",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "QueryType",
+    "name": "SourcePort",
     "type": "STRING",
-    "mode": "NULLABLE"
+    "MODE": "NULLABLE"
   },
   {
-    "name": "RData",
+    "name": "URL",
     "type": "STRING",
-    "mode": "REPEATED"
+    "MODE": "NULLABLE"
   },
   {
-    "name": "ResolverDecision",
+    "name": "UploadedFileNames",
     "type": "STRING",
-    "mode": "NULLABLE"
+    "mode": "REPEATABLE"
   },
   {
-    "name": "SrcIP",
+    "name": "UserAgent",
     "type": "STRING",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "SrcPort",
-    "type": "INTEGER",
-    "mode": "NULLABLE"
+    "MODE": "NULLABLE"
   },
   {
     "name": "UserID",
     "type": "STRING",
-    "mode": "NULLABLE"
+    "MODE": "NULLABLE"
   }
 ]
