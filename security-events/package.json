@@ -21,8 +21,8 @@
     "app"
   ],
   "dependencies": {
-    "@google-cloud/security-center": "^2.2.1",
-    "@google-cloud/storage": "^2.3.4",
+    "@google-cloud/security-center": "^9.2.1",
+    "@google-cloud/storage": "^7.17.3",
     "dotenv": "^8.2.0",
     "env-yaml": "^0.1.2",
     "moment": "^2.24.0",
