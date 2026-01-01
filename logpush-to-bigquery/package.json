@@ -4,7 +4,7 @@
   "dependencies": {
     "@google-cloud/bigquery": "^5.5.0",
     "@google-cloud/logging": "^9.2.1",
-    "@google-cloud/pubsub": "^0.18.0",
+    "@google-cloud/pubsub": "^5.2.0",
     "@google-cloud/storage": "^5.8.3",
     "luxon": "^1.26.0"
   },
